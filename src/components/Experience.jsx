@@ -3,70 +3,66 @@ import React from 'react';
 const Experience = () => {
   const experiences = [
     {
-      period: "2021 - Present",
-      role: "Mobile Developer",
-      company: "You-IT",
-      description: "Developing and maintaining mobile applications for various clients. Implementing modern architectures, integrating RESTful APIs, and ensuring high performance across Android and iOS platforms."
+      role: "Senior Flutter Developer",
+      company: "Confidential FinTech Company",
+      period: "Aug 2024 – Present",
+      location: "Riyadh, KSA (Remote)",
+      description: "Engineered core modules for investment portfolios, digital wallets, and financial transactions. Implemented Clean Architecture to separate UI, Domain, and Data layers. Secured REST APIs handling sensitive financial data within Agile sprint cycles."
     },
     {
-      period: "2020 - 2021",
+      role: "Flutter Trainer",
+      company: "BBSoft Academy / Experts Institute",
+      period: "Aug 2023 – Present",
+      location: "Aden, Yemen",
+      description: "Trained over 50 developers on Flutter, Dart, Clean Architecture, and advanced state management. Designed a comprehensive curriculum covering API integration, Firebase architecture, and full app store deployment workflows."
+    },
+    {
+      role: "Mobile Developer — Flutter",
+      company: "You for Information Technology (YOU-IT)",
+      period: "Dec 2021 – Jul 2024",
+      location: "Aden, Yemen",
+      description: "Built and shipped 9+ production apps to Google Play & App Store. Led Clean Architecture implementation across projects, integrated Firebase and diverse REST APIs, and delivered pixel-perfect UIs based on Figma and Adobe XD designs."
+    },
+    {
       role: "Android Developer",
       company: "Freelance",
-      description: "Worked on various freelance projects, developing native Android applications. Focused on UI/UX, responsive design, and robust backend integration."
-    }
-  ];
-
-  const education = [
-    {
-      period: "2020 - 2021",
-      degree: "Bachelor's degree in Computer Science",
-      institution: "Aden University"
-    },
-    {
-      period: "2022",
-      degree: "The Complete Flutter Development Guide",
-      institution: "Udemy"
-    },
-    {
-      period: "2022",
-      degree: "The Complete Dart Learning Guide",
-      institution: "Udemy"
+      period: "Jan 2020 – Dec 2021",
+      location: "Aden, Yemen",
+      description: "Built native Java Android applications leveraging MVVM architectural patterns. Integrated Firebase for backend services and real-time data, and implemented AdMob monetization strategies."
     }
   ];
 
   return (
-    <section id="experience" className="py-20 border-t border-dark-border">
-      <div className="flex flex-col lg:flex-row gap-16">
-        {/* Experience Column */}
-        <div className="lg:w-1/2">
-          <h2 className="text-3xl font-serif font-bold text-white mb-10">Experience</h2>
-          <div className="space-y-12">
-            {experiences.map((exp, idx) => (
-              <div key={idx} className="relative pl-8 border-l border-dark-border">
-                <span className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-gold"></span>
-                <span className="text-sm font-mono text-gray-500 mb-2 block">{exp.period}</span>
-                <h3 className="text-xl font-semibold text-white mb-1">{exp.role}</h3>
-                <h4 className="text-gold mb-3">{exp.company}</h4>
-                <p className="text-gray-400 leading-relaxed text-sm">{exp.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+    <section id="experience" className="px-[clamp(1.5rem,5vw,5rem)] py-28 border-t border-dark-border relative">
+      <div className="flex items-baseline gap-6 mb-16 reveal">
+        <span className="font-mono text-[0.7rem] text-gold tracking-[0.1em]">02</span>
+        <h2 className="font-serif text-[clamp(2rem,4vw,3.5rem)] tracking-[-0.02em] text-paper">
+          Experience <em className="italic text-gold">Timeline</em>
+        </h2>
+        <div className="flex-1 h-[1px] bg-gradient-to-r from-dark-warmBorder to-transparent"></div>
+      </div>
 
-        {/* Education Column */}
-        <div className="lg:w-1/2">
-          <h2 className="text-3xl font-serif font-bold text-white mb-10">Education</h2>
-          <div className="space-y-12">
-            {education.map((edu, idx) => (
-              <div key={idx} className="relative pl-8 border-l border-dark-border">
-                <span className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-gray-600"></span>
-                <span className="text-sm font-mono text-gray-500 mb-2 block">{edu.period}</span>
-                <h3 className="text-xl font-semibold text-white mb-1">{edu.degree}</h3>
-                <h4 className="text-gray-400">{edu.institution}</h4>
-              </div>
-            ))}
+      <div className="flex flex-col gap-0">
+        {experiences.map((exp, idx) => (
+          <div 
+            key={idx} 
+            className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-2 md:gap-8 py-10 border-b border-dark-border first:border-t transition-colors duration-300 hover:bg-transparent group reveal"
+            style={{ transitionDelay: `${idx * 70}ms` }}
+          >
+            <div>
+              <div className="font-mono text-[0.7rem] text-gold tracking-[0.08em] mb-[0.4rem]">{exp.period}</div>
+              <div className="text-[0.85rem] text-muted font-medium">{exp.company}</div>
+              <div className="text-[0.75rem] text-muted/60 mt-1">{exp.location}</div>
+            </div>
+            
+            <div>
+              <h3 className="font-serif text-[1.4rem] text-paper mb-[0.7rem] transition-colors duration-250 group-hover:text-gold">{exp.role}</h3>
+              <p className="text-[0.875rem] text-muted leading-[1.7] max-w-[65ch] mb-4">
+                {exp.description}
+              </p>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );

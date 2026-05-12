@@ -6,24 +6,48 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        gold: {
-          DEFAULT: '#d4af37',
-          light: '#e5c158',
-          dark: '#aa8c2c',
-        },
-        dark: {
-          DEFAULT: '#0a0a0a',
-          card: '#1a1a1a',
-          border: '#333333',
-        }
-      },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['"Playfair Display"', 'serif'],
+        sans: ['"DM Sans"', 'sans-serif'],
+        serif: ['"DM Serif Display"', 'serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      },
+      colors: {
+        dark: {
+          DEFAULT: '#0b0b0d', // ink
+          card: '#0f0f12',
+          border: 'rgba(255,255,255,0.07)',
+          warmBorder: 'rgba(201,169,110,0.2)'
+        },
+        gold: {
+          DEFAULT: '#c9a96e', // accent
+          dim: 'rgba(201, 169, 110, 0.15)',
+        },
+        paper: '#f5f3ee',
+        muted: '#7a776e',
       },
       backgroundImage: {
-        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+        'grid-pattern': `
+          linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px)
+        `,
+      },
+      backgroundSize: {
+        'grid-pattern': '80px 80px',
+      },
+      animation: {
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'heroFloat 6s ease-in-out infinite',
+        'scrollPulse': 'scrollPulse 2s ease-in-out infinite',
+      },
+      keyframes: {
+        heroFloat: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+        scrollPulse: {
+          '0%, 100%': { opacity: '0.4', transform: 'scaleY(1)' },
+          '50%': { opacity: '1', transform: 'scaleY(1.1)' },
+        }
       }
     },
   },
