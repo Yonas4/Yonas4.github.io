@@ -3,6 +3,61 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Emerald Theme (Default) */
+    --color-ink: 9 15 12;
+    --color-card: 12 20 16;
+    --color-border: 255 255 255;
+    --color-accent: 16 185 129;
+    --color-paper: 238 245 240;
+    --color-muted: 110 125 116;
+  }
+
+  /* Flutter Blue */
+  .theme-flutter {
+    --color-ink: 10 11 16;
+    --color-card: 14 15 22;
+    --color-accent: 56 189 248;
+    --color-paper: 226 232 240;
+    --color-muted: 100 116 139;
+  }
+  
+  /* Emerald */
+  .theme-emerald {
+    --color-ink: 9 15 12;
+    --color-card: 12 20 16;
+    --color-accent: 16 185 129;
+    --color-paper: 238 245 240;
+    --color-muted: 110 125 116;
+  }
+  
+  /* Amethyst */
+  .theme-amethyst {
+    --color-ink: 12 10 18;
+    --color-card: 16 13 24;
+    --color-accent: 168 85 247;
+    --color-paper: 241 238 245;
+    --color-muted: 120 115 130;
+  }
+  
+  /* Ruby */
+  .theme-ruby {
+    --color-ink: 18 10 11;
+    --color-card: 24 13 15;
+    --color-accent: 225 29 72;
+    --color-paper: 245 236 238;
+    --color-muted: 130 115 118;
+  }
+  
+  /* Silver */
+  .theme-silver {
+    --color-ink: 9 9 11;
+    --color-card: 13 13 15;
+    --color-accent: 161 161 170;
+    --color-paper: 244 244 245;
+    --color-muted: 113 113 122;
+  }
+
   html {
     scroll-behavior: smooth;
   }

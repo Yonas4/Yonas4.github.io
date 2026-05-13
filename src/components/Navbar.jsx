@@ -59,7 +59,7 @@ const Navbar = () => {
                   href={link.href} 
                   className={`text-[0.7rem] xl:text-[0.78rem] font-medium tracking-[0.04em] uppercase px-[0.6rem] xl:px-[0.85rem] py-[0.45rem] rounded-full border transition-colors duration-200 whitespace-nowrap ${
                     isActive 
-                      ? 'text-paper border-dark-warmBorder bg-gold/10' 
+                      ? 'text-paper border-gold bg-gold/10' 
                       : 'text-muted border-transparent hover:text-paper hover:bg-white/5 hover:border-dark-border'
                   }`}
                 >
@@ -70,24 +70,24 @@ const Navbar = () => {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-2 justify-self-end">
-            <div className="hidden sm:flex items-center gap-1">
-              <a href="https://github.com/Yonas4" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-[10px] border border-dark-border bg-white/5 text-muted hover:text-gold hover:border-dark-warmBorder hover:bg-gold/10 transition-colors">
+          <div className="flex items-center gap-1.5 md:gap-2 justify-self-end">
+            <div className="flex items-center gap-1 md:gap-1">
+              <a href="https://github.com/Yonas4" target="_blank" rel="noreferrer" className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-lg md:rounded-[10px] border border-dark-border bg-white/5 text-muted hover:text-gold hover:border-dark-warmBorder hover:bg-gold/10 transition-colors">
                 <Github size={18} />
               </a>
-              <a href="https://www.linkedin.com/in/yunes-al-khaledi/" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-[10px] border border-dark-border bg-white/5 text-muted hover:text-gold hover:border-dark-warmBorder hover:bg-gold/10 transition-colors">
+              <a href="https://www.linkedin.com/in/yunes-al-khaledi/" target="_blank" rel="noreferrer" className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-lg md:rounded-[10px] border border-dark-border bg-white/5 text-muted hover:text-gold hover:border-dark-warmBorder hover:bg-gold/10 transition-colors">
                 <Linkedin size={18} />
               </a>
-              <a href="mailto:yunes.alkhaledi@gmail.com" className="w-10 h-10 flex items-center justify-center rounded-[10px] border border-dark-border bg-white/5 text-muted hover:text-gold hover:border-dark-warmBorder hover:bg-gold/10 transition-colors">
+              <a href="mailto:yunes.alkhaledi@gmail.com" className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-lg md:rounded-[10px] border border-dark-border bg-white/5 text-muted hover:text-gold hover:border-dark-warmBorder hover:bg-gold/10 transition-colors">
                 <Mail size={18} />
               </a>
             </div>
 
             {/* Mobile Toggle */}
-            <button className="lg:hidden w-[42px] h-[42px] flex flex-col items-center justify-center gap-[5px] rounded-[10px] border border-dark-border bg-white/5 text-paper" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              <span className={`block h-[2px] w-[18px] bg-current rounded-[1px] transition-transform ${mobileMenuOpen ? 'translate-y-[7px] rotate-45' : ''}`}></span>
-              <span className={`block h-[2px] w-[18px] bg-current rounded-[1px] transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`block h-[2px] w-[18px] bg-current rounded-[1px] transition-transform ${mobileMenuOpen ? '-translate-y-[7px] -rotate-45' : ''}`}></span>
+            <button className="lg:hidden w-9 h-9 md:w-10 md:h-10 flex flex-col items-center justify-center gap-[4px] md:gap-[5px] rounded-lg md:rounded-[10px] border border-dark-border bg-white/5 text-muted hover:text-gold hover:border-dark-warmBorder hover:bg-gold/10 transition-colors" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              <span className={`block h-[2px] w-[16px] md:w-[18px] bg-current rounded-[1px] transition-transform ${mobileMenuOpen ? 'translate-y-[6px] md:translate-y-[7px] rotate-45' : ''}`}></span>
+              <span className={`block h-[2px] w-[16px] md:w-[18px] bg-current rounded-[1px] transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block h-[2px] w-[16px] md:w-[18px] bg-current rounded-[1px] transition-transform ${mobileMenuOpen ? '-translate-y-[6px] md:-translate-y-[7px] -rotate-45' : ''}`}></span>
             </button>
           </div>
 
@@ -118,11 +118,7 @@ const Navbar = () => {
               </a>
             );
           })}
-          <div className="flex sm:hidden justify-center gap-4 py-6 border-t border-dark-border mt-2">
-            <a href="https://github.com/Yonas4" target="_blank" rel="noreferrer" className="text-muted hover:text-gold"><Github size={24} /></a>
-            <a href="https://www.linkedin.com/in/yunes-al-khaledi/" target="_blank" rel="noreferrer" className="text-muted hover:text-gold"><Linkedin size={24} /></a>
-            <a href="mailto:yunes.alkhaledi@gmail.com" className="text-muted hover:text-gold"><Mail size={24} /></a>
-          </div>
+          {/* The social icons have been moved to the header directly */}
         </div>
       </div>
     </>

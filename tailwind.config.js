@@ -13,17 +13,17 @@ export default {
       },
       colors: {
         dark: {
-          DEFAULT: '#0b0b0d', // ink
-          card: '#0f0f12',
-          border: 'rgba(255,255,255,0.07)',
-          warmBorder: 'rgba(201,169,110,0.2)'
+          DEFAULT: 'rgb(var(--color-ink) / <alpha-value>)',
+          card: 'rgb(var(--color-card) / <alpha-value>)',
+          border: 'rgba(var(--color-border), 0.07)',
+          warmBorder: 'rgba(var(--color-accent), 0.2)'
         },
         gold: {
-          DEFAULT: '#c9a96e', // accent
-          dim: 'rgba(201, 169, 110, 0.15)',
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
+          dim: 'rgba(var(--color-accent), 0.15)',
         },
-        paper: '#f5f3ee',
-        muted: '#7a776e',
+        paper: 'rgb(var(--color-paper) / <alpha-value>)',
+        muted: 'rgb(var(--color-muted) / <alpha-value>)',
       },
       backgroundImage: {
         'grid-pattern': `
