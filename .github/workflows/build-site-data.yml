@@ -1,0 +1,52 @@
+name: Rebuild project manifest & sitemap
+
+# data/projects/index.json and sitemap.xml are derived from data/projects/*.md.
+# Decap CMS writes the .md files directly and knows nothing about the derived
+# files, so without this a project published from /admin would never appear in
+# the grid. This regenerates them on every push that touches the source data.
+#
+# No infinite loop: pushes made with the built-in GITHUB_TOKEN do not trigger
+# further workflow runs.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/projects/**.md"
+      - "scripts/build-site-data.js"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-site-data
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Full history so `git log -1` can date each project for <lastmod>.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Regenerate index.json and sitemap.xml
+        run: node scripts/build-site-data.js
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet -- data/projects/index.json sitemap.xml; then
+            echo "Already up to date — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/projects/index.json sitemap.xml
+          git commit -m "chore: rebuild project manifest & sitemap [skip ci]"
+          git push
