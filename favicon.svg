@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" fill="#090f0c" stroke="#10b981" stroke-opacity="0.2" stroke-width="20"/>
+  
+  <!-- Left Bracket < -->
+  <path d="M 180 200 L 120 256 L 180 312" fill="none" stroke="#10b981" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Right Bracket > -->
+  <path d="M 332 200 L 392 256 L 332 312" fill="none" stroke="#10b981" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Center Y -->
+  <path d="M 220 180 L 256 250 L 292 180 M 256 250 L 256 340" fill="none" stroke="#eef5f0" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

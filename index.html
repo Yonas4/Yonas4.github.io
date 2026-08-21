@@ -1,18 +1,538 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yunes Alkhaledi - Senior Mobile Developer</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Yunes Al-Khaledi — Senior Flutter Developer</title>
+<meta name="description" content="Senior Flutter Developer with 5+ years building production-grade iOS & Android apps across FinTech, e-commerce, delivery, and content platforms. Shipped 9+ live apps."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://yonas4.github.io/"/>
+<meta property="og:title" content="Yunes Al-Khaledi — Senior Flutter Developer"/>
+<meta property="og:description" content="Senior Flutter Developer with 5+ years building production-grade iOS & Android apps across FinTech, e-commerce, delivery, and content platforms. Shipped 9+ live apps."/>
+<meta property="og:image" content="https://yonas4.github.io/photo.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Yunes Al-Khaledi — Senior Flutter Developer"/>
+<meta name="twitter:description" content="Senior Flutter Developer with 5+ years building production-grade iOS & Android apps across FinTech, e-commerce, delivery, and content platforms. Shipped 9+ live apps."/>
+<meta name="twitter:image" content="https://yonas4.github.io/photo.jpg"/>
+<link rel="canonical" href="https://yonas4.github.io/"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="alternate icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Yunes Al-Khaledi",
+  "jobTitle": "Senior Flutter Developer & Mobile Application Engineer",
+  "url": "https://yonas4.github.io/",
+  "email": "yunes.alkhaledi@gmail.com",
+  "address": {"@type": "PostalAddress", "addressLocality": "Aden", "addressCountry": "YE"},
+  "sameAs": [
+    "https://github.com/Yonas4",
+    "https://www.linkedin.com/in/yunes-al-khaledi/"
+  ],
+  "knowsAbout": ["Flutter", "Dart", "Mobile Development", "iOS", "Android", "Clean Architecture", "Riverpod", "BLoC", "GetX", "REST API", "Firebase", "Dio", "Retrofit", "WebSockets"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Cabinet+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<!-- Analytics placeholder — add Plausible or Google Analytics here later -->
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<a href="https://wa.me/967778420917" target="_blank" class="wa-fab" id="wa-fab" aria-label="WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button class="btt" id="btt" aria-label="Back to top"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+<nav id="nav">
+  <a class="nav-logo" href="#">Yunes Al-Khaledi <span class="nav-dot"></span></a>
+  <div class="nav-right">
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero-section" data-section="hero-section">Home</a></li>
+      <li><a href="#about" data-section="about">About</a></li>
+      <li><a href="#skills" data-section="skills">Skills</a></li>
+      <li><a href="#experience" data-section="experience">Experience</a></li>
+      <li><a href="#projects" data-section="projects">Projects</a></li>
+      <li><a href="#certifications" data-section="certifications">Certifications</a></li>
+      <li><a href="https://github.com/Yonas4" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a></li>
+      <li><a href="#contact" class="nav-hire" data-section="contact">Hire me</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div style="position:relative">
+        <button class="theme-toggle" id="settings-trigger" aria-label="Settings" title="Preferences"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+        <div class="nav-settings-panel" id="settings-panel">
+          <div class="sp-title">// Preferences</div>
+          <div class="sp-row">
+            <span class="sp-label">Dark Mode</span>
+            <button class="sp-toggle" id="sp-dark-toggle" aria-label="Toggle dark mode"></button>
+          </div>
+          <hr class="sp-divider"/>
+          <div class="sp-row" style="flex-direction:column;align-items:flex-start;gap:.5rem">
+            <span class="sp-label">Accent Color</span>
+            <div class="sp-colors">
+              <div class="sp-color active" data-color="green" style="background:#1a6b45" title="Green"></div>
+              <div class="sp-color" data-color="blue" style="background:#1d4ed8" title="Blue"></div>
+              <div class="sp-color" data-color="purple" style="background:#7c3aed" title="Purple"></div>
+              <div class="sp-color" data-color="rose" style="background:#e11d48" title="Rose"></div>
+              <div class="sp-color" data-color="cyan" style="background:#0891b2" title="Cyan"></div>
+              <div class="sp-color" data-color="amber" style="background:#d97706" title="Amber"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg viewBox="0 0 24 24" class="icon-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#hero-section" data-mob="hero-section">Home</a>
+  <a href="#about" data-mob="about">About</a>
+  <a href="#skills" data-mob="skills">Skills</a>
+  <a href="#experience" data-mob="experience">Experience</a>
+  <a href="#projects" data-mob="projects">Projects</a>
+  <a href="#certifications" data-mob="certifications">Certifications</a>
+  <a href="https://github.com/Yonas4" target="_blank">GitHub ↗</a>
+  <a href="https://wa.me/967778420917" target="_blank">WhatsApp ↗</a>
+  <a href="#contact" class="m-hire">Hire me</a>
+</div>
+
+<section id="hero-section">
+  <div id="hero">
+    <div class="hero-left">
+      <div class="avail-badge"><span class="avail-dot"></span> Available for hire · Remote</div>
+      <h1>Senior Flutter<br><em>Developer</em><br>&amp; Mobile<br>Engineer</h1>
+      <p class="hero-lead">Senior Flutter Developer with <strong>5+ years shipping production iOS &amp; Android apps</strong> across FinTech, e-commerce, delivery, and content platforms. <strong>9+ live apps</strong> on the stores — Clean Architecture to App Store, I own the full stack.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-dark">View my work →</a>
+        <a href="#contact" class="btn-line">Let's talk</a>
+        <a href="CV.pdf" download="Yunes_AlKhaledi_CV.pdf" class="btn-line" id="cv-btn">Download CV ↓</a>
+        <a href="https://github.com/Yonas4" target="_blank" class="btn-line" style="display:inline-flex;align-items:center;gap:.45rem"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg> GitHub ↗</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="photo-wrap">
+        <div class="photo-glow"></div>
+        <div class="photo-glow2"></div>
+        <div class="photo-box">
+          <img src="photo.jpg" alt="Yunes Al-Khaledi"/>
+        </div>
+        <div class="photo-badge">
+          <div class="badge-n">5+</div>
+          <div class="badge-l">Years of<br>Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mobile-stats">
+  <div class="mobile-stat"><div class="ms-n">5+</div><div class="ms-l">Years Exp.</div></div>
+</div>
+
+<div class="about-band" id="about">
+  <div class="about-in">
+    <div><div class="about-title">Building apps<br><em>people rely on</em></div></div>
+    <div>
+      <p class="about-body">I'm an Aden-based <strong>Senior Flutter Developer</strong> with 5+ years of experience building production-grade mobile applications across <strong>FinTech, e-commerce, delivery, and content platforms</strong>. I've shipped 9+ live apps to Google Play &amp; App Store serving thousands of active users.<br><br>Most recently at <strong>Siolla</strong> — a live investment platform where I developed and maintained core features for a large-scale, high-traffic app handling sensitive user data. Also experienced as a <strong>Flutter Trainer</strong>, mentoring <strong>50+ developers</strong> on production-level best practices and real-world architecture patterns.</p>
+    </div>
+    <div>
+      <ul class="about-list">
+        <li>Clean Architecture + Riverpod / BLoC / GetX</li>
+        <li>9+ apps shipped to App Store &amp; Google Play</li>
+        <li>REST API, Dio, Retrofit, WebSockets</li>
+        <li>Arabic / English bilingual developer</li>
+        <li>Flutter Trainer — 50+ developers mentored</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section id="skills">
+  <div class="sec-wrap">
+    <div class="sec-tag">Skills &amp; Expertise</div>
+    <h2 class="sec-h">What I bring<br>to your <em>team</em></h2>
+    <div class="skills-g">
+      <div class="skill-card featured"><div class="skill-ico">📱</div><div class="skill-nm">Core Platform</div><div class="tags"><span class="tag hi">Flutter</span><span class="tag hi">Dart</span><span class="tag">Android (Java)</span><span class="tag">iOS</span><span class="tag">Cross-platform</span></div></div>
+      <div class="skill-card featured"><div class="skill-ico">🏗️</div><div class="skill-nm">Architecture</div><div class="tags"><span class="tag hi">Clean Architecture</span><span class="tag hi">Riverpod</span><span class="tag">BLoC</span><span class="tag">GetX</span><span class="tag">MVVM</span><span class="tag">MVC</span></div></div>
+      <div class="skill-card featured"><div class="skill-ico">🔌</div><div class="skill-nm">APIs &amp; Networking</div><div class="tags"><span class="tag hi">Dio</span><span class="tag hi">Retrofit</span><span class="tag">REST APIs</span><span class="tag">WebSockets</span><span class="tag">JSON</span><span class="tag">AutoRoute</span><span class="tag">GoRouter</span></div></div>
+      <div class="skill-card featured"><div class="skill-ico">💳</div><div class="skill-nm">Payments &amp; SDKs</div><div class="tags"><span class="tag hi">PayTabs</span><span class="tag hi">Intercom</span><span class="tag">Firebase</span><span class="tag">URL Launcher</span><span class="tag">Contacts</span></div></div>
+      <div class="skill-card featured"><div class="skill-ico">🚀</div><div class="skill-nm">CI/CD &amp; DevOps</div><div class="tags"><span class="tag hi">GitHub Actions</span><span class="tag hi">Fastlane</span><span class="tag">Firebase App Dist.</span><span class="tag">App Flavors</span><span class="tag">App Store</span><span class="tag">Play Store</span></div></div>
+      <div class="skill-card featured"><div class="skill-ico">🧪</div><div class="skill-nm">Databases &amp; Analytics</div><div class="tags"><span class="tag hi">Firebase</span><span class="tag hi">Crashlytics</span><span class="tag">SQLite</span><span class="tag">MySQL</span><span class="tag">Sentry</span><span class="tag">Secure Storage</span></div></div>
+      <div class="skill-card featured"><div class="skill-ico">🚀</div><div class="skill-nm">DevOps &amp; Design</div><div class="tags"><span class="tag hi">Git</span><span class="tag hi">Figma</span><span class="tag">Adobe XD</span><span class="tag">Agile/Scrum</span><span class="tag">9+ Apps Published</span></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr"/>
+
+<section id="experience">
+  <div class="sec-wrap">
+    <div class="sec-tag">Work History</div>
+    <h2 class="sec-h">Experience</h2>
+    <div class="exp-list">
+
+      <div class="exp-row">
+        <div>
+          <div class="exp-period">Aug 2024 — Jul 2026</div>
+          <div class="exp-co">siolla | سيولا</div>
+          <span class="exp-pill p-rem">Remote · Riyadh, KSA</span>
+        </div>
+        <div>
+          <div class="exp-role">Senior Flutter Developer</div>
+          <ul class="exp-pts">
+            <li>Developed and maintained core features for a <strong>large-scale, high-traffic mobile application</strong> handling sensitive user data and complex business logic.</li>
+            <li>Implemented <strong>Clean Architecture</strong> with strict UI / Domain / Data layer separation — improving scalability, testability, and long-term maintainability.</li>
+            <li>Integrated and secured multiple <strong>REST APIs</strong>, applying encryption and token-based authentication best practices.</li>
+            <li>Optimized app performance for <strong>real-time data rendering</strong> and delivered features consistently within Agile sprint cycles across a distributed remote team.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag hi">Flutter</span><span class="tag">Riverpod</span><span class="tag">Clean Architecture</span><span class="tag">REST API</span><span class="tag">Auto Route</span><span class="tag">Dio</span></div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div>
+          <div class="exp-period">Aug 2023 — Present</div>
+          <div class="exp-co">BBSoft Academy / Experts Institute</div>
+          <span class="exp-pill p-cur">● Current</span><br>
+          <span class="exp-pill p-loc" style="margin-top:.35rem">Aden, Yemen</span>
+        </div>
+        <div>
+          <div class="exp-role">Flutter Trainer</div>
+          <ul class="exp-pts">
+            <li>Delivered structured Flutter &amp; Dart training covering <strong>Clean Architecture, state management (GetX, BLoC)</strong>, and production app patterns.</li>
+            <li>Trained <strong>50+ developers</strong> — curriculum spanned API integration, Firebase services, architecture design, and app store deployment.</li>
+            <li>Designed hands-on exercises and project scenarios aligned with <strong>real industry workflows</strong>.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag hi">Flutter</span><span class="tag">Dart</span><span class="tag">Mentorship</span><span class="tag">Clean Architecture</span><span class="tag">BLoC</span><span class="tag">GetX</span></div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div>
+          <div class="exp-period">Dec 2021 — Jul 2024</div>
+          <div class="exp-co">YOU for Information Technology (YOU-IT)</div>
+          <span class="exp-pill p-loc">Aden, Yemen</span>
+        </div>
+        <div>
+          <div class="exp-role">Mobile Developer — Flutter</div>
+          <ul class="exp-pts">
+            <li>Built and shipped <strong>9+ production Flutter applications</strong> across e-commerce, delivery, news, and utility domains — all live on Google Play &amp; App Store.</li>
+            <li>Led architecture decisions using <strong>Clean Architecture and MVC</strong>; integrated REST APIs and full Firebase ecosystem across all projects.</li>
+            <li>Collaborated with UI/UX designers (Figma, Adobe XD) to deliver <strong>pixel-perfect interfaces</strong>; managed full app lifecycle from requirements to deployment.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag hi">Flutter</span><span class="tag">Clean Architecture</span><span class="tag">REST API</span><span class="tag">Firebase</span><span class="tag">Figma</span></div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div>
+          <div class="exp-period">Jan 2020 — Dec 2021</div>
+          <div class="exp-co">Self-Employed (Freelance)</div>
+          <span class="exp-pill p-rem">Remote</span>
+        </div>
+        <div>
+          <div class="exp-role">Android Developer</div>
+          <ul class="exp-pts">
+            <li>Developed and published Android apps in <strong>Java using MVVM</strong>; integrated Firebase (FCM, Realtime DB, Cloud Storage) and AdMob monetization.</li>
+            <li>Handled all project phases independently: requirements analysis, database design, development, testing, and <strong>Play Store publishing</strong>.</li>
+          </ul>
+          <div class="exp-tags"><span class="tag">Android</span><span class="tag">Java</span><span class="tag">MVVM</span><span class="tag">Firebase</span><span class="tag">AdMob</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="hr"/>
+
+<section id="projects">
+  <div class="sec-wrap">
+    <div class="sec-tag">Selected Work</div>
+    <h2 class="sec-h">Projects I've <em>shipped</em></h2>
+<div class="proj-grid" id="proj-grid" data-limit="4">
+      <div style="grid-column:1/-1;text-align:center;padding:3rem;font-family:'Geist Mono',monospace;color:var(--muted)">Loading projects…</div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr"/>
+
+<section id="certifications">
+  <div class="sec-wrap">
+    <div class="sec-tag">Learning &amp; Growth</div>
+    <h2 class="sec-h">Certifications</h2>
+    <div class="certs-g">
+      <div class="cert-card"><div class="cert-logo" style="background:#a435f0">U</div><div><div class="cert-nm">The Complete Flutter Development Bootcamp</div><div class="cert-is">Udemy</div></div></div>
+      <div class="cert-card"><div class="cert-logo" style="background:#a435f0">U</div><div><div class="cert-nm">The Complete Dart Language Guide</div><div class="cert-is">Udemy</div></div></div>
+      <div class="cert-card"><div class="cert-logo" style="background:#1976D2">M</div><div><div class="cert-nm">Android Application Development with Java</div><div class="cert-is">MaharaTech</div></div></div>
+      <div class="cert-card"><div class="cert-logo" style="background:#059669">J</div><div><div class="cert-nm">Project Management Fundamentals</div><div class="cert-is">Jadara Training</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="ct-wrap">
+    <span class="ct-tag">Get In Touch</span>
+    <h2 class="ct-h">Let's build<br>something <em>great</em><br>together</h2>
+    <p class="ct-sub">Open to full-time remote roles, freelance projects, and long-term collaborations. Whether you need a Flutter expert to join your team, integrate a payment SDK, or build a production app from scratch — I'm ready to ship.</p>
+
+    <div class="ct-layout">
+      <!-- Left: quick contact cards -->
+      <div class="ct-quick">
+        <a href="https://wa.me/967778420917" target="_blank" class="ct-qcard">
+          <span class="ct-qicon" style="background:#25D366">📱</span>
+          <span class="ct-qtext">
+            <span class="ct-qlbl">Call / WhatsApp</span>
+            <span class="ct-qval">+967778420917</span>
+          </span>
+        </a>
+        <a href="#" id="em-link-ct" target="_blank" rel="noopener" class="ct-qcard">
+          <span class="ct-qicon" style="background:#1D5CFF">✉️</span>
+          <span class="ct-qtext">
+            <span class="ct-qlbl">Email</span>
+            <span class="ct-qval" id="em-display-ct">yunes.alkhaledi@gmail.com</span>
+          </span>
+        </a>
+        <a href="https://github.com/Yonas4" target="_blank" class="ct-qcard">
+          <span class="ct-qicon" style="background:#24292e">🐙</span>
+          <span class="ct-qtext">
+            <span class="ct-qlbl">GitHub</span>
+            <span class="ct-qval">Yonas4</span>
+          </span>
+        </a>
+        <a href="https://www.linkedin.com/in/yunes-al-khaledi/" target="_blank" class="ct-qcard">
+          <span class="ct-qicon" style="background:#0A66C2">💼</span>
+          <span class="ct-qtext">
+            <span class="ct-qlbl">LinkedIn</span>
+            <span class="ct-qval">yunes-al-khaledi</span>
+          </span>
+        </a>
+        <a href="CV.pdf" download="Yunes_AlKhaledi_CV.pdf" class="ct-qcard">
+          <span class="ct-qicon" style="background:#7C3AED">📄</span>
+          <span class="ct-qtext">
+            <span class="ct-qlbl">Resume</span>
+            <span class="ct-qval">Download CV ↓</span>
+          </span>
+        </a>
+        <div class="ct-qcard ct-qcard-static">
+          <span class="ct-qicon" style="background:#D97706">📍</span>
+          <span class="ct-qtext">
+            <span class="ct-qlbl">Location</span>
+            <span class="ct-qval">Aden, Yemen</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: form card -->
+      <div class="ct-form-card">
+        <form id="ct-form" class="ct-form">
+          <div class="ct-form-row">
+            <label for="ct-name">Your name</label>
+            <input type="text" id="ct-name" name="name" placeholder="Enter your name" required/>
+          </div>
+          <div class="ct-form-row">
+            <label for="ct-email">Your email</label>
+            <input type="email" id="ct-email" name="email" placeholder="name@company.com" required/>
+          </div>
+          <div class="ct-form-row">
+            <label for="ct-message">Project details or message</label>
+            <textarea id="ct-message" name="message" rows="6" placeholder="Describe your project, timeline, or requirements..." required></textarea>
+          </div>
+          <button type="submit" class="ct-form-submit" id="ct-form-submit">
+            <span class="ct-form-submit-label">Send Message →</span>
+          </button>
+          <p class="ct-form-status" id="ct-form-status" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ct-wrap{ max-width: 1400px !important; }
+  .ct-layout{
+    display:grid;
+    /* minmax(0,…) not plain fr: a bare `1fr` is `minmax(auto,1fr)`, whose auto
+       floor is the item's min-content width, so a long unbreakable value inside
+       .ct-quick can force the track wider than the page. */
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.6fr);
+    gap: 2.5rem;
+    align-items:start;
+    margin-top: 3rem;
+    width: 100%;
+  }
+  @media (max-width: 800px){
+    .ct-layout{ grid-template-columns: minmax(0, 1fr); }
+  }
+
+  .ct-quick{ display:flex; flex-direction:column; gap:1rem; }
+  .ct-qcard{
+    display:flex; align-items:center; gap:1rem;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:16px;
+    padding:1.1rem 1.3rem;
+    text-decoration:none;
+    transition:background .2s, transform .2s, border-color .2s;
+  }
+  .ct-qcard:hover{
+    background:rgba(255,255,255,.08);
+    border-color:rgba(255,255,255,.2);
+    transform:translateY(-2px);
+  }
+  .ct-qcard-static:hover{ transform:none; }
+  .ct-qicon{
+    width:42px; height:42px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.1rem; flex:0 0 auto;
+  }
+  .ct-qtext{ display:flex; flex-direction:column; gap:.15rem; min-width:0; }
+  .ct-qlbl{
+    font-family:'Geist Mono',monospace; font-size:.62rem; letter-spacing:.06em;
+    text-transform:uppercase; color:rgba(255,255,255,.45);
+  }
+  .ct-qval{
+    font-weight:600; color:#fff; font-size:.92rem;
+    /* The email/handle values have no spaces to break at. `nowrap` made their
+       min-content width the full string (~281px), which is what blew out the
+       grid track above. `anywhere` lets them wrap, so the value stays fully
+       readable instead of being truncated to an ellipsis on small screens. */
+    overflow-wrap:anywhere;
+  }
+
+  .ct-form-card{
+    background:#fff;
+    border-radius:20px;
+    padding:2.8rem;
+    box-shadow:0 20px 60px -20px rgba(0,0,0,.5);
+  }
+  .ct-form{ display:flex; flex-direction:column; gap:1.5rem; }
+  .ct-form-row{ display:flex; flex-direction:column; gap:.5rem; }
+  .ct-form-row label{
+    font-family:'Geist Mono',monospace; font-size:.68rem; letter-spacing:.06em;
+    text-transform:uppercase; color:#666;
+  }
+  .ct-form-row input, .ct-form-row textarea{
+    background:#f3f4f6;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:1rem 1.1rem;
+    color:#111;
+    font-family:inherit; font-size:.95rem;
+    outline:none;
+    transition:border-color .2s, background .2s;
+    resize:vertical;
+    /* inputs/textarea default to an intrinsic `size`/`cols` width (~203px)
+       that ignores the container; without these they'd overflow .ct-form-card
+       on very narrow screens once the grid track is free to shrink. */
+    width:100%;
+    min-width:0;
+  }
+  .ct-form-row input::placeholder, .ct-form-row textarea::placeholder{ color:#9ca3af; }
+  .ct-form-row input:focus, .ct-form-row textarea:focus{
+    border-color:var(--green,#1a6b45);
+    background:#fff;
+  }
+  .ct-form-submit{
+    display:inline-flex; align-items:center; justify-content:center;
+    background:var(--green,#1a6b45); color:#fff; border:none;
+    border-radius:100px; padding:1rem 1.6rem;
+    font-family:inherit; font-weight:600; font-size:.9rem;
+    cursor:pointer; transition:opacity .2s, transform .2s;
+    width:100%;
+  }
+  .ct-form-submit:hover{ opacity:.88; transform:translateY(-1px); }
+  .ct-form-submit:disabled{ opacity:.55; cursor:default; transform:none; }
+  .ct-form-status{
+    font-family:'Geist Mono',monospace; font-size:.8rem; min-height:1.2em; margin:0; text-align:center;
+  }
+  .ct-form-status.ok{ color:#16a34a; }
+  .ct-form-status.err{ color:#dc2626; }
+
+  @media (max-width: 480px){
+    /* 2.8rem of padding each side eats 27% of a 327px-wide card */
+    .ct-form-card{ padding:1.75rem 1.35rem; }
+    .ct-layout{ gap:1.75rem; }
+  }
+</style>
+
+<footer>
+  <span>© <span id="copy-year"></span> Yunes Al-Khaledi</span>
+  <span style="font-family:'Geist Mono',monospace">Senior Flutter Developer · Aden, Yemen</span>
+</footer>
+
+<script src="script.js"></script>
+<script src="js/js-yaml.min.js"></script>
+<script src="js/site-data.js"></script>
+<script src="js/render-projects.js"></script>
+<script>
+(function () {
+  const EMAIL = "yunes.alkhaledi@gmail.com";
+  const SUBJECT = "Let's talk — from your portfolio";
+
+  function toGmailCompose(el) {
+    if (!el) return;
+    const clone = el.cloneNode(true);
+    el.replaceWith(clone);
+    clone.setAttribute(
+      "href",
+      "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(EMAIL) +
+        "&su=" +
+        encodeURIComponent(SUBJECT)
+    );
+    clone.setAttribute("target", "_blank");
+    clone.setAttribute("rel", "noopener");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    toGmailCompose(document.getElementById("em-link-btn"));
+    toGmailCompose(document.getElementById("em-link-ct"));
+
+    const form = document.getElementById("ct-form");
+    const status = document.getElementById("ct-form-status");
+    const submitBtn = document.getElementById("ct-form-submit");
+
+    if (form) {
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        status.textContent = "";
+        status.className = "ct-form-status";
+        submitBtn.disabled = true;
+        submitBtn.querySelector(".ct-form-submit-label").textContent = "Sending…";
+
+        try {
+          const res = await fetch("https://formspree.io/f/mrendkdq", {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: new FormData(form),
+          });
+
+          if (res.ok) {
+            form.reset();
+            status.textContent = "Message sent — I'll get back to you soon.";
+            status.className = "ct-form-status ok";
+          } else {
+            status.textContent = "Something went wrong. Please try emailing me directly.";
+            status.className = "ct-form-status err";
+          }
+        } catch (err) {
+          status.textContent = "Network error. Please try emailing me directly.";
+          status.className = "ct-form-status err";
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.querySelector(".ct-form-submit-label").textContent = "Send Message →";
+        }
+      });
+    }
+  });
+})();
+</script>
+</body>
 </html>

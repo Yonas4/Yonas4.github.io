@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title id="page-title">Project — Yunes Al-Khaledi</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Cabinet+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css"/>
+<!-- Analytics placeholder -->
+<style>
+  @media (hover: none) and (pointer: coarse) {
+    #cursor, #cursor-ring { display: none !important; }
+  }
+  .cs-mockup-grid{
+    grid-column: 1 / -1;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:1.75rem;
+    padding:2.5rem 0;
+  }
+  .cs-walk-in{ max-width: 1400px !important; }
+  .cs-mockup{display:flex;flex-direction:column;align-items:center;gap:1rem}
+  .cs-phone-mini{
+    position:relative;
+    width:100%;
+    max-width:230px;
+    aspect-ratio:9/19.5;
+    border-radius:32px;
+    padding:6px;
+    background:linear-gradient(160deg,#2a2a2a,#0a0a0a);
+    box-shadow:0 4px 10px rgba(0,0,0,.08), 0 20px 45px -12px rgba(0,0,0,.35);
+    cursor:zoom-in;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .cs-phone-mini:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 16px rgba(0,0,0,.12), 0 28px 55px -12px rgba(0,0,0,.45);
+  }
+  .cs-phone-mini::before{
+    content:"";
+    position:absolute;
+    top:14px;
+    left:50%;
+    transform:translateX(-50%);
+    width:38%;
+    height:16px;
+    background:#0a0a0a;
+    border-radius:0 0 14px 14px;
+    z-index:2;
+  }
+  .cs-phone-mini-inner{width:100%;height:100%;border-radius:26px;overflow:hidden;background:#000;transform:translateZ(0)}
+  .cs-phone-mini img{width:100%;height:100%;object-fit:cover;background:#000;display:block;image-rendering:auto;backface-visibility:hidden}
+  .cs-mockup-cap{
+    font-family:'Geist Mono',monospace;
+    font-size:.68rem;
+    letter-spacing:.04em;
+    color:var(--muted);
+    text-align:center;
+    padding:.3rem .8rem;
+    border:1px solid var(--border,rgba(0,0,0,.08));
+    border-radius:100px;
+  }
+  .cs-walk-tab{cursor:pointer}
+
+  .cs-lightbox{
+    position:fixed;inset:0;z-index:999;
+    background:rgba(10,10,10,.88);
+    display:none;
+    align-items:center;justify-content:center;
+    padding:3rem 1.5rem;
+    cursor:zoom-out;
+  }
+  .cs-lightbox.open{display:flex}
+  .cs-lightbox img{
+    max-width:min(420px,90vw);
+    max-height:85vh;
+    border-radius:28px;
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
+  }
+  .cs-lightbox-close{
+    position:absolute;top:1.5rem;right:1.5rem;
+    width:42px;height:42px;border-radius:50%;
+    background:rgba(255,255,255,.1);
+    color:#fff;border:1px solid rgba(255,255,255,.25);
+    font-size:1.3rem;line-height:1;cursor:pointer;
+  }
+
+  #skeleton{padding:4rem 2rem;text-align:center;font-family:'Geist Mono',monospace;color:var(--muted)}
+
+  /* Compact walkthrough tabs (hard override — base site CSS stacks these full-width) */
+  .cs-walk-tabs{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    width:fit-content !important;
+    max-width:100% !important;
+    gap:.35rem !important;
+    background:rgba(0,0,0,.045);
+    padding:.3rem !important;
+    border-radius:100px !important;
+    margin:0 !important;
+  }
+  .cs-walk-tab{
+    display:flex !important;
+    flex-direction:row !important;
+    flex:0 0 auto !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:auto !important;
+    height:auto !important;
+    padding:.45rem 1rem !important;
+    margin:0 !important;
+    font-size:.78rem !important;
+    line-height:1.2 !important;
+    border-radius:100px !important;
+    border:none !important;
+    background:transparent !important;
+    color:var(--muted);
+    font-weight:600;
+    white-space:nowrap;
+    gap:.4rem;
+  }
+  .cs-walk-tab .cs-walk-tab-dot{
+    width:6px;height:6px;border-radius:50%;
+    background:currentColor;
+    opacity:.5;
+    flex:0 0 auto;
+  }
+  .cs-walk-tab.active{
+    background:#fff !important;
+    color:var(--text,#111);
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+  }
+  .cs-walk-tab.active .cs-walk-tab-dot{
+    background:var(--green,#1D5CFF);
+    opacity:1;
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<a href="https://wa.me/967778420917" target="_blank" class="wa-fab" id="wa-fab" aria-label="WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button class="btt" id="btt" aria-label="Back to top"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+
+<nav id="nav">
+  <a class="nav-logo" href="../index.html">Yunes Al-Khaledi <span class="nav-dot"></span></a>
+  <div class="nav-right">
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#hero-section">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#certifications">Certifications</a></li>
+      <li><a href="https://github.com/Yonas4" target="_blank">GitHub</a></li>
+      <li><a href="../index.html#contact" class="nav-hire">Hire me</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg viewBox="0 0 24 24" class="icon-sun"><circle cx="12" cy="12" r="5"/></svg></button>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../index.html#hero-section">Home</a>
+  <a href="../index.html#about">About</a>
+  <a href="../index.html#skills">Skills</a>
+  <a href="../index.html#experience">Experience</a>
+  <a href="../index.html#projects" class="active">Projects</a>
+  <a href="../index.html#certifications">Certifications</a>
+  <a href="https://github.com/Yonas4" target="_blank">GitHub ↗</a>
+  <a href="../index.html#contact" class="m-hire">Hire me</a>
+</div>
+
+<div class="cs-back">
+  <a href="../index.html#projects">← Back to Portfolio</a>
+</div>
+
+<div id="skeleton">Loading project…</div>
+<div id="project-root" style="display:none"></div>
+<div class="cs-lightbox" id="cs-lightbox">
+  <button class="cs-lightbox-close" id="cs-lightbox-close" aria-label="Close">✕</button>
+  <img id="cs-lightbox-img" src="" alt="Screenshot preview"/>
+</div>
+
+<footer>
+  <span>© <span id="copy-year"></span> Yunes Al-Khaledi</span>
+  <a href="javascript:void(0)" id="em-link-footer" style="font-family:'Geist Mono',monospace;font-size:.73rem;color:var(--contact-label);text-decoration:none">yunes.alkhaledi@gmail.com</a>
+  <span style="font-family:'Geist Mono',monospace">Senior Flutter Developer · Aden, Yemen</span>
+</footer>
+
+<script src="../script.js"></script>
+<script src="../js/js-yaml.min.js"></script>
+<script src="../js/site-data.js"></script>
+<script>
+async function renderProject() {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("slug");
+  const skeleton = document.getElementById("skeleton");
+  const root = document.getElementById("project-root");
+
+  if (!slug) {
+    skeleton.textContent = "No project specified. Use project.html?slug=your-project-slug";
+    return;
+  }
+
+  let p;
+  try {
+    p = await SiteData.fetchProject(slug);
+  } catch (e) {
+    skeleton.textContent = "Couldn't load project '" + slug + "': " + (e.message || e);
+    return;
+  }
+
+  document.title = (p.name || "Project") + " — Case Study | Yunes Al-Khaledi";
+  document.getElementById("page-title").textContent = document.title;
+
+  const stats = (p.stats || []).map(s => `
+    <div class="cs-stat"><span class="cs-stat-n">${escapeHtml(s.number)}</span><span class="cs-stat-l">${escapeHtml(s.label)}</span></div>
+  `).join("");
+
+  const caps = (p.capabilities || []).map(c => `
+    <div class="cs-cap"><div class="cs-cap-ico">${escapeHtml(c.icon || "")}</div><div class="cs-cap-tx"><b>${escapeHtml(c.title)}</b><p>${escapeHtml(c.description)}</p></div></div>
+  `).join("");
+
+  const flow = (p.architecture_flow || []).map((step, i, arr) => {
+    const label = (step && typeof step === "object") ? (step.step || "") : step;
+    const arrow = i < arr.length - 1 ? `<span class="cs-flow-arrow">→</span>` : "";
+    return `<span class="cs-flow-step">${escapeHtml(label)}</span>${arrow}`;
+  }).join("");
+
+  const flow2 = (p.architecture_flow_2 || []).map((step, i, arr) => {
+    const label = (step && typeof step === "object") ? (step.step || "") : step;
+    const arrow = i < arr.length - 1 ? `<span class="cs-flow-arrow">→</span>` : "";
+    return `<span class="cs-flow-step">${escapeHtml(label)}</span>${arrow}`;
+  }).join("");
+
+  const banner = p.banner ? `
+    <div style="grid-column:1/-1">
+      <img src="../${escapeAttr(p.banner)}" alt="${escapeAttr(p.name)} Screenshots Banner" style="width:100%;border-radius:18px;display:block;">
+    </div>` : "";
+
+  const mockups = (p.mockups || []).map(m => `
+    <div class="cs-mockup">
+      <div class="cs-phone-mini" data-lightbox-src="../${escapeAttr(m.image)}">
+        <div class="cs-phone-mini-inner"><img src="../${escapeAttr(m.image)}" alt="${escapeAttr(m.caption ||"")}"/></div>
+      </div>
+      <span class="cs-mockup-cap">${escapeHtml(m.caption || "")}</span>
+    </div>
+  `).join("");
+
+  const hasVideo = !!p.video;
+  const hasMockups = (p.mockups || []).length > 0;
+
+  const walkTabs = hasVideo && hasMockups ? `
+    <div class="cs-walk-tabs">
+      <div class="cs-walk-tab active" data-walk="mockups"><span class="cs-walk-tab-dot"></span><span class="cs-walk-tab-nm">Screenshots</span></div>
+      <div class="cs-walk-tab" data-walk="video"><span class="cs-walk-tab-dot"></span><span class="cs-walk-tab-nm">Video Demo</span></div>
+    </div>` : "";
+  const walkNote = hasVideo && hasMockups ? `<p class="cs-walk-note">Static mockups shown by default — no live merchant data. Toggle to Video Demo for the full emulator walkthrough.</p>` : "";
+
+  const challenges = (p.challenges || []).map(c => `
+    <div class="cs-challenge"><div class="cs-ch-label">${escapeHtml(c.label)}</div><div class="cs-ch-body"><b>${escapeHtml(c.title)}</b><p>${escapeHtml(c.body)}</p></div></div>
+  `).join("");
+
+  const techTags = (p.tech_tags || []).map(t => `<span class="tag hi">${escapeHtml(t.tag || t)}</span>`).join("");
+
+  const links = p.links || {};
+  const linkButtons = [
+    links.github ? `<a href="${escapeAttr(links.github)}" target="_blank" class="pl pl-store">GitHub ↗</a>` : "",
+    links.app_store ? `<a href="${escapeAttr(links.app_store)}" target="_blank" class="pl pl-store">App Store ↗</a>` : "",
+    links.google_play ? `<a href="${escapeAttr(links.google_play)}" target="_blank" class="pl pl-store">Google Play ↗</a>` : "",
+  ].join("");
+
+  root.innerHTML = `
+    <div class="cs-hero">
+      ${p.icon ? `<div class="cs-icon"><img src="../${escapeAttr(p.icon)}" alt="${escapeAttr(p.name)} icon"/></div>` : ""}
+      <div>
+        <div class="cs-tag">${escapeHtml(p.badge || "Project")}${p.category ? " · " + escapeHtml(p.category): ""}</div>
+        <h1 class="cs-title">${escapeHtml(p.name || "")}</h1>
+      </div>
+      <div class="cs-links">${linkButtons}</div>
+    </div>
+
+    ${p.overview || stats ? `
+    <div class="cs-band">
+      <div class="cs-overview">
+        <div>
+          <div class="cs-h2">Overview</div>
+          <p>${(p.overview || "").replace(/\n\n/g, "<br><br>")}</p>
+        </div>
+        ${stats ? `<div class="cs-stats">${stats}</div>` : ""}
+      </div>
+    </div>` : ""}
+
+    ${caps ? `
+    <section class="cs-caps">
+      <div class="sec-tag">Core Capabilities</div>
+      <h2 class="cs-h2" style="font-size:1.75rem;margin-bottom:2rem">What the app does</h2>
+      <div class="cs-cap-grid">${caps}</div>
+    </section>` : ""}
+
+    ${p.architecture_text || flow ? `
+    <div class="cs-arch">
+      <div class="cs-arch-in">
+        <div class="sec-tag">Architecture</div>
+        <h2 class="cs-h2" style="font-size:1.75rem">How it's built</h2>
+        <p>${(p.architecture_text || "").replace(/\n\n/g, "<br><br>")}</p>
+        ${flow ? `<div class="cs-flow">${flow}</div>` : ""}
+        ${flow2 ? `<div class="cs-flow" style="margin-top:1rem">${flow2}</div>` : ""}
+      </div>
+    </div>` : ""}
+
+    ${(hasMockups || hasVideo) ? `
+    <div class="cs-walk">
+      <div class="cs-walk-in">
+        <div class="cs-walk-head">
+          <div>
+            <div class="sec-tag">Walkthrough</div>
+            <h2 class="cs-h2" style="font-size:1.75rem">See it in action</h2>
+          </div>
+          ${walkTabs}
+        </div>
+        ${walkNote}
+        ${hasMockups ? `<div class="cs-mockup-grid" data-walk-panel="mockups">${banner}${mockups}</div>` : ""}
+        ${hasVideo ? `
+        <div class="cs-phone-wrap" data-walk-panel="video" style="${hasMockups ? "display:none" : ""}">
+          <span class="cs-phone-lbl">Emulator</span>
+          <div class="cs-phone">
+            <div class="cs-phone-screen">
+              <video controls playsinline preload="metadata">
+                <source src="../${escapeAttr(p.video)}" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>` : ""}
+      </div>
+    </div>` : ""}
+
+    ${challenges ? `
+    <section class="cs-challenges">
+      <div class="sec-tag">Problems Solved</div>
+      <h2 class="cs-h2" style="font-size:1.75rem;margin-bottom:2rem">Real engineering challenges</h2>
+      ${challenges}
+    </section>` : ""}
+
+    ${techTags ? `
+    <div class="cs-tech-band">
+      <div class="cs-tech-in">
+        <div class="sec-tag" style="justify-content:center">Technologies Employed</div>
+        <h2 class="cs-h2" style="font-size:1.5rem">Built with</h2>
+        <div class="cs-tech-tags">${techTags}</div>
+      </div>
+    </div>` : ""}
+  `;
+
+  skeleton.style.display = "none";
+  root.style.display = "";
+
+  // Walkthrough tab toggle
+  document.querySelectorAll(".cs-walk-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".cs-walk-tab").forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      const target = tab.getAttribute("data-walk");
+      document.querySelectorAll("[data-walk-panel]").forEach(panel => {
+        panel.style.display = panel.getAttribute("data-walk-panel") === target ? "" : "none";
+      });
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById("cs-lightbox");
+  const lightboxImg = document.getElementById("cs-lightbox-img");
+  document.querySelectorAll("[data-lightbox-src]").forEach(el => {
+    el.addEventListener("click", () => {
+      lightboxImg.src = el.getAttribute("data-lightbox-src");
+      lightbox.classList.add("open");
+    });
+  });
+  function closeLightbox() { lightbox.classList.remove("open"); lightboxImg.src = ""; }
+  document.getElementById("cs-lightbox-close").addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+}
+
+function escapeHtml(str) {
+  if (str == null) return "";
+  return String(str).replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+}
+function escapeAttr(str) { return escapeHtml(str); }
+
+renderProject();
+</script>
+</body>
+</html>

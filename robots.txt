@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Decap CMS admin panel — no reason to index it.
+Disallow: /admin/
+
+# NOTE: /data/ is deliberately NOT disallowed. The project grid and case study
+# pages are client-rendered from data/projects/*.md + index.json, so Googlebot
+# must be able to fetch those files to see any project content at all. Blocking
+# them would make every case study render empty to the crawler.
+
+Sitemap: https://yonas4.github.io/sitemap.xml
