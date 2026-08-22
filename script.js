@@ -5,7 +5,7 @@ if(nav) window.addEventListener('scroll', function() {
 }, {passive: true});
 
 // Active nav tab on scroll (only runs on pages that have these sections)
-const sections = ['hero-section','about','skills','experience','projects','certifications','contact'];
+const sections = ['hero-section','projects','about','experience','skills','certifications','contact'];
 const navLinks = document.querySelectorAll('.nav-links a[data-section]');
 
 function setActive(id) {
@@ -193,22 +193,82 @@ if(cursor && ring) {
   applyReveals(document);
 })();
 
-// Mobile hamburger
+// Mobile hamburger & navigation
 (function(){
   var btn = document.getElementById('nav-hamburger');
   var menu = document.getElementById('mobile-menu');
   if(!btn || !menu) return;
-  btn.addEventListener('click', function(){
-    var open = menu.classList.toggle('open');
-    btn.classList.toggle('open', open);
-  });
+
+  function toggleMenu(e) {
+    if (e) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+    var isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.classList.toggle('menu-open', isOpen);
+  }
+
+  function closeMenu() {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  }
+
+  btn.addEventListener('click', toggleMenu);
+  btn.addEventListener('touchstart', function(e) {
+    // Prevent double firing on touch devices while allowing smooth click
+    e.stopPropagation();
+  }, {passive: true});
+
   menu.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){
-      menu.classList.remove('open');
-      btn.classList.remove('open');
+      closeMenu();
     });
   });
+
+  // Close when clicking outside menu
+  document.addEventListener('click', function(e) {
+    if (menu.classList.contains('open') && !menu.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      closeMenu();
+    }
+  });
 })();
+
+// Whole Project Card Click Navigation
+document.addEventListener('click', function(e) {
+  var card = e.target.closest('.proj-x-card, .proj-card');
+  if (!card) return;
+  // If the click is inside a link or button, let that native link handle it without navigating the parent card
+  var linkOrBtn = e.target.closest('a, button, input, textarea');
+  if (linkOrBtn) return;
+
+  var href = card.getAttribute('data-href');
+  if (href) {
+    window.location.href = href;
+  }
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    var card = document.activeElement;
+    if (card && (card.classList.contains('proj-x-card') || card.classList.contains('proj-card'))) {
+      var href = card.getAttribute('data-href');
+      if (href) {
+        e.preventDefault();
+        window.location.href = href;
+      }
+    }
+  }
+});
 
 // Email obfuscation (works on any page containing these ids)
 (function(){

@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://yonas4.github.io/photo.jpg"/>
 <link rel="canonical" href="https://yonas4.github.io/"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-<link rel="alternate icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>"/>
+<link rel="alternate icon" type="image/svg+xml" href="favicon.svg"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,7 +35,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Cabinet+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&family=Geist+Mono:wght@400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="styles.css"/>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBGCVL474Y"></script>
@@ -60,10 +60,10 @@
   <div class="nav-right">
     <ul class="nav-links" id="nav-links">
       <li><a href="#hero-section" data-section="hero-section">Home</a></li>
-      <li><a href="#about" data-section="about">About</a></li>
-      <li><a href="#skills" data-section="skills">Skills</a></li>
-      <li><a href="#experience" data-section="experience">Experience</a></li>
       <li><a href="#projects" data-section="projects">Projects</a></li>
+      <li><a href="#about" data-section="about">About</a></li>
+      <li><a href="#experience" data-section="experience">Experience</a></li>
+      <li><a href="#skills" data-section="skills">Skills</a></li>
       <li><a href="#certifications" data-section="certifications">Certifications</a></li>
       <li><a href="https://github.com/Yonas4" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a></li>
       <li><a href="#contact" class="nav-hire" data-section="contact">Hire me</a></li>
@@ -99,10 +99,10 @@
 
 <div class="mobile-menu" id="mobile-menu">
   <a href="#hero-section" data-mob="hero-section">Home</a>
-  <a href="#about" data-mob="about">About</a>
-  <a href="#skills" data-mob="skills">Skills</a>
-  <a href="#experience" data-mob="experience">Experience</a>
   <a href="#projects" data-mob="projects">Projects</a>
+  <a href="#about" data-mob="about">About</a>
+  <a href="#experience" data-mob="experience">Experience</a>
+  <a href="#skills" data-mob="skills">Skills</a>
   <a href="#certifications" data-mob="certifications">Certifications</a>
   <a href="https://github.com/Yonas4" target="_blank">GitHub ↗</a>
   <a href="https://wa.me/967778420917" target="_blank">WhatsApp ↗</a>
@@ -142,6 +142,18 @@
   <div class="mobile-stat"><div class="ms-n">5+</div><div class="ms-l">Years Exp.</div></div>
 </div>
 
+<section id="projects">
+  <div class="sec-wrap">
+    <div class="sec-tag">Selected Work</div>
+    <h2 class="sec-h">Projects I've <em>shipped</em></h2>
+    <div class="proj-grid" id="proj-grid" data-limit="6">
+      <div style="grid-column:1/-1;text-align:center;padding:3rem;font-family:'Geist Mono',monospace;color:var(--muted)">Loading projects…</div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr"/>
+
 <div class="about-band" id="about">
   <div class="about-in">
     <div><div class="about-title">Building apps<br><em>people rely on</em></div></div>
@@ -159,22 +171,6 @@
     </div>
   </div>
 </div>
-
-<section id="skills">
-  <div class="sec-wrap">
-    <div class="sec-tag">Skills &amp; Expertise</div>
-    <h2 class="sec-h">What I bring<br>to your <em>team</em></h2>
-    <div class="skills-g">
-      <div class="skill-card featured"><div class="skill-ico">📱</div><div class="skill-nm">Core Platform</div><div class="tags"><span class="tag hi">Flutter</span><span class="tag hi">Dart</span><span class="tag">Android (Java)</span><span class="tag">iOS</span><span class="tag">Cross-platform</span></div></div>
-      <div class="skill-card featured"><div class="skill-ico">🏗️</div><div class="skill-nm">Architecture</div><div class="tags"><span class="tag hi">Clean Architecture</span><span class="tag hi">Riverpod</span><span class="tag">BLoC</span><span class="tag">GetX</span><span class="tag">MVVM</span><span class="tag">MVC</span></div></div>
-      <div class="skill-card featured"><div class="skill-ico">🔌</div><div class="skill-nm">APIs &amp; Networking</div><div class="tags"><span class="tag hi">Dio</span><span class="tag hi">Retrofit</span><span class="tag">REST APIs</span><span class="tag">WebSockets</span><span class="tag">JSON</span><span class="tag">AutoRoute</span><span class="tag">GoRouter</span></div></div>
-      <div class="skill-card featured"><div class="skill-ico">💳</div><div class="skill-nm">Payments &amp; SDKs</div><div class="tags"><span class="tag hi">PayTabs</span><span class="tag hi">Intercom</span><span class="tag">Firebase</span><span class="tag">URL Launcher</span><span class="tag">Contacts</span></div></div>
-      <div class="skill-card featured"><div class="skill-ico">🚀</div><div class="skill-nm">CI/CD &amp; DevOps</div><div class="tags"><span class="tag hi">GitHub Actions</span><span class="tag hi">Fastlane</span><span class="tag">Firebase App Dist.</span><span class="tag">App Flavors</span><span class="tag">App Store</span><span class="tag">Play Store</span></div></div>
-      <div class="skill-card featured"><div class="skill-ico">🧪</div><div class="skill-nm">Databases &amp; Analytics</div><div class="tags"><span class="tag hi">Firebase</span><span class="tag hi">Crashlytics</span><span class="tag">SQLite</span><span class="tag">MySQL</span><span class="tag">Sentry</span><span class="tag">Secure Storage</span></div></div>
-      <div class="skill-card featured"><div class="skill-ico">🚀</div><div class="skill-nm">DevOps &amp; Design</div><div class="tags"><span class="tag hi">Git</span><span class="tag hi">Figma</span><span class="tag">Adobe XD</span><span class="tag">Agile/Scrum</span><span class="tag">9+ Apps Published</span></div></div>
-    </div>
-  </div>
-</section>
 
 <hr class="hr"/>
 
@@ -259,12 +255,53 @@
 
 <hr class="hr"/>
 
-<section id="projects">
+<section id="skills">
   <div class="sec-wrap">
-    <div class="sec-tag">Selected Work</div>
-    <h2 class="sec-h">Projects I've <em>shipped</em></h2>
-<div class="proj-grid" id="proj-grid" data-limit="4">
-      <div style="grid-column:1/-1;text-align:center;padding:3rem;font-family:'Geist Mono',monospace;color:var(--muted)">Loading projects…</div>
+    <div class="sec-tag">Skills &amp; Expertise</div>
+    <h2 class="sec-h">What I bring<br>to your <em>team</em></h2>
+    <div class="skills-g">
+      <div class="skill-card featured">
+        <div class="skill-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <div class="skill-nm">Mobile &amp; Platforms</div>
+        <div class="tags"><span class="tag hi">Flutter</span><span class="tag hi">Dart</span><span class="tag">Android (Java)</span><span class="tag">iOS</span><span class="tag">Cross-platform</span></div>
+      </div>
+      <div class="skill-card featured">
+        <div class="skill-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        </div>
+        <div class="skill-nm">Architecture &amp; State</div>
+        <div class="tags"><span class="tag hi">Clean Architecture</span><span class="tag hi">Riverpod</span><span class="tag">BLoC</span><span class="tag">GetX</span><span class="tag">MVVM</span><span class="tag">MVC</span></div>
+      </div>
+      <div class="skill-card featured">
+        <div class="skill-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/><polyline points="12 12 15 15 12 18"/></svg>
+        </div>
+        <div class="skill-nm">APIs &amp; Networking</div>
+        <div class="tags"><span class="tag hi">Dio</span><span class="tag hi">Retrofit</span><span class="tag">REST APIs</span><span class="tag">WebSockets</span><span class="tag">JSON</span><span class="tag">AutoRoute</span></div>
+      </div>
+      <div class="skill-card featured">
+        <div class="skill-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <div class="skill-nm">Backend &amp; SDKs</div>
+        <div class="tags"><span class="tag hi">Firebase</span><span class="tag hi">PayTabs</span><span class="tag">Crashlytics</span><span class="tag">SQLite</span><span class="tag">Push Notifications</span><span class="tag">Secure Storage</span></div>
+      </div>
+      <div class="skill-card featured">
+        <div class="skill-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+        </div>
+        <div class="skill-nm">CI/CD &amp; Publishing</div>
+        <div class="tags"><span class="tag hi">Google Play Console</span><span class="tag hi">App Store Connect</span><span class="tag">GitHub Actions</span><span class="tag">Fastlane</span><span class="tag">App Flavors</span></div>
+      </div>
+      <div class="skill-card featured">
+        <div class="skill-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        </div>
+        <div class="skill-nm">UI/UX &amp; Workflow</div>
+        <div class="tags"><span class="tag hi">Figma</span><span class="tag hi">Adobe XD</span><span class="tag">Pixel-Perfect UI</span><span class="tag">Responsive Layouts</span><span class="tag">Agile/Scrum</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -293,43 +330,55 @@
     <div class="ct-layout">
       <!-- Left: quick contact cards -->
       <div class="ct-quick">
-        <a href="https://wa.me/967778420917" target="_blank" class="ct-qcard">
-          <span class="ct-qicon" style="background:#25D366">📱</span>
+        <a href="https://wa.me/967778420917" target="_blank" rel="noopener" class="ct-qcard">
+          <span class="ct-qicon" style="background:#25D366">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </span>
           <span class="ct-qtext">
             <span class="ct-qlbl">Call / WhatsApp</span>
             <span class="ct-qval">+967778420917</span>
           </span>
         </a>
         <a href="#" id="em-link-ct" target="_blank" rel="noopener" class="ct-qcard">
-          <span class="ct-qicon" style="background:#1D5CFF">✉️</span>
+          <span class="ct-qicon" style="background:#1D5CFF">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
           <span class="ct-qtext">
             <span class="ct-qlbl">Email</span>
             <span class="ct-qval" id="em-display-ct">yunes.alkhaledi@gmail.com</span>
           </span>
         </a>
-        <a href="https://github.com/Yonas4" target="_blank" class="ct-qcard">
-          <span class="ct-qicon" style="background:#24292e">🐙</span>
+        <a href="https://github.com/Yonas4" target="_blank" rel="noopener" class="ct-qcard">
+          <span class="ct-qicon" style="background:#24292e">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </span>
           <span class="ct-qtext">
             <span class="ct-qlbl">GitHub</span>
             <span class="ct-qval">Yonas4</span>
           </span>
         </a>
-        <a href="https://www.linkedin.com/in/yunes-al-khaledi/" target="_blank" class="ct-qcard">
-          <span class="ct-qicon" style="background:#0A66C2">💼</span>
+        <a href="https://www.linkedin.com/in/yunes-al-khaledi/" target="_blank" rel="noopener" class="ct-qcard">
+          <span class="ct-qicon" style="background:#0A66C2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </span>
           <span class="ct-qtext">
             <span class="ct-qlbl">LinkedIn</span>
             <span class="ct-qval">yunes-al-khaledi</span>
           </span>
         </a>
         <a href="CV.pdf" download="Yunes_AlKhaledi_CV.pdf" class="ct-qcard">
-          <span class="ct-qicon" style="background:#7C3AED">📄</span>
+          <span class="ct-qicon" style="background:#7C3AED">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="12" y2="18"/><line x1="15" y1="15" x2="12" y2="18"/></svg>
+          </span>
           <span class="ct-qtext">
             <span class="ct-qlbl">Resume</span>
             <span class="ct-qval">Download CV ↓</span>
           </span>
         </a>
         <div class="ct-qcard ct-qcard-static">
-          <span class="ct-qicon" style="background:#D97706">📍</span>
+          <span class="ct-qicon" style="background:#D97706">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
           <span class="ct-qtext">
             <span class="ct-qlbl">Location</span>
             <span class="ct-qval">Aden, Yemen</span>
