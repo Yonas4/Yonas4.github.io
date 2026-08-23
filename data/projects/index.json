@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-23T20:13:34.846Z",
+  "generated": "2026-08-23T20:36:52.151Z",
   "count": 10,
   "projects": [
     {
@@ -44,7 +44,7 @@
         "google_play": "https://play.google.com/store/apps/details?id=com.siolla.app",
         "app_store": "https://apps.apple.com/sa/app/siolla/id1626263854"
       },
-      "lastmod": "2026-08-21"
+      "lastmod": "2026-08-23"
     },
     {
       "slug": "anis-phone",
@@ -82,7 +82,7 @@
         "google_play": "https://play.google.com/store/apps/details?id=com.uitapss.anis_phone&hl=en",
         "app_store": "https://apps.apple.com/sa/app/anis-phone/id6605932618"
       },
-      "lastmod": "2026-08-21"
+      "lastmod": "2026-08-23"
     },
     {
       "slug": "medalah-store",
@@ -114,7 +114,7 @@
         "google_play": "https://play.google.com/store/apps/details?id=com.uitapps.medalah_store&hl=en",
         "app_store": "https://apps.apple.com/kh/app/%D9%85%D8%B8%D9%84%D9%87-%D8%B3%D8%AA%D9%88%D8%B1/id6470996069"
       },
-      "lastmod": "2026-08-21"
+      "lastmod": "2026-08-23"
     },
     {
       "slug": "361-yemen",
@@ -146,7 +146,7 @@
         "google_play": "https://play.google.com/store/apps/details?id=com.uitapps.threesixtyoneec&hl=pt&gl=US",
         "app_store": "https://apps.apple.com/sa/app/361%C2%BA-yemen/id1661525655"
       },
-      "lastmod": "2026-08-21"
+      "lastmod": "2026-08-23"
     },
     {
       "slug": "beutiqaty",
@@ -178,7 +178,7 @@
         "google_play": "https://play.google.com/store/apps/details?id=com.uitapps.beutiqaty&hl=pt&gl=US",
         "app_store": "https://apps.apple.com/sa/app/beutiqaty/id1668648347"
       },
-      "lastmod": "2026-08-21"
+      "lastmod": "2026-08-23"
     },
     {
       "slug": "aswaq-aden",
@@ -209,7 +209,7 @@
       "links": {
         "google_play": "https://play.google.com/store/apps/datasafety?id=com.yonas_you.aswaq_aden&hl=pt&gl=US"
       },
-      "lastmod": "2026-08-21"
+      "lastmod": "2026-08-23"
     },
     {
       "slug": "tagerly-driver",
@@ -237,7 +237,7 @@
       "links": {
         "google_play": "https://drive.google.com/drive/folders/1gblk73OJepEQ6rcugJPXIW5N4b3czhKK?usp=drive_link"
       },
-      "lastmod": "2026-08-21"
+      "lastmod": "2026-08-23"
     },
     {
       "slug": "mufeed",
@@ -265,7 +265,7 @@
       "links": {
         "google_play": "https://drive.google.com/drive/folders/18DMlrFM4A1swIig2tJ91mxZO6QBS_73h?usp=drive_link"
       },
-      "lastmod": "2026-08-21"
+      "lastmod": "2026-08-23"
     },
     {
       "slug": "stc-aden",
@@ -292,7 +292,7 @@
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=com.uitapps.garida.stcaden_app&hl=en"
       },
-      "lastmod": "2026-08-21"
+      "lastmod": "2026-08-23"
     },
     {
       "slug": "south-water",
@@ -322,7 +322,7 @@
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=com.uitapps.south_water&hl=en"
       },
-      "lastmod": "2026-08-21"
+      "lastmod": "2026-08-23"
     }
   ]
 }
