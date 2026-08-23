@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title id="page-title">Project Case Study — Yunes Al-Khaledi | Senior Flutter Developer</title>
+<link rel="canonical" href="https://yonas4.github.io/en/projects/project.html"/>
+<link rel="alternate" hreflang="en" href="https://yonas4.github.io/en/projects/project.html"/>
+<link rel="alternate" hreflang="ar" href="https://yonas4.github.io/projects/project.html"/>
+<link rel="alternate" hreflang="x-default" href="https://yonas4.github.io/projects/project.html"/>
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&family=Geist+Mono:wght@400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../styles.css"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBGCVL474Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JBGCVL474Y');
+</script>
+<style>
+  @media (hover: none) and (pointer: coarse) {
+    #cursor, #cursor-ring { display: none !important; }
+  }
+  .cs-mockup-grid{
+    grid-column: 1 / -1;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:1.75rem;
+    padding:2.5rem 0;
+  }
+  .cs-walk-in{ max-width: 1400px !important; }
+  .cs-mockup{display:flex;flex-direction:column;align-items:center;gap:1rem}
+  .cs-phone-mini{
+    position:relative;
+    width:100%;
+    max-width:230px;
+    aspect-ratio:9/19.5;
+    border-radius:32px;
+    padding:6px;
+    background:linear-gradient(160deg,#2a2a2a,#0a0a0a);
+    box-shadow:0 4px 10px rgba(0,0,0,.08), 0 20px 45px -12px rgba(0,0,0,.35);
+    cursor:zoom-in;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .cs-phone-mini:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 16px rgba(0,0,0,.12), 0 28px 55px -12px rgba(0,0,0,.45);
+  }
+  .cs-phone-mini::before{
+    content:"";
+    position:absolute;
+    top:14px;
+    left:50%;
+    transform:translateX(-50%);
+    width:38%;
+    height:16px;
+    background:#0a0a0a;
+    border-radius:0 0 14px 14px;
+    z-index:2;
+  }
+  .cs-phone-mini-inner{width:100%;height:100%;border-radius:26px;overflow:hidden;background:#000;transform:translateZ(0)}
+  .cs-phone-mini img{width:100%;height:100%;object-fit:cover;background:#000;display:block;image-rendering:auto;backface-visibility:hidden}
+  .cs-mockup-cap{
+    font-family:'Geist Mono',monospace;
+    font-size:.68rem;
+    letter-spacing:.04em;
+    color:var(--muted);
+    text-align:center;
+    padding:.3rem .8rem;
+    border:1px solid var(--border,rgba(0,0,0,.08));
+    border-radius:100px;
+  }
+  .cs-walk-tab{cursor:pointer}
+
+  .cs-lightbox{
+    position:fixed;inset:0;z-index:999;
+    background:rgba(10,10,10,.88);
+    display:none;
+    align-items:center;justify-content:center;
+    padding:3rem 1.5rem;
+    cursor:zoom-out;
+  }
+  .cs-lightbox.open{display:flex}
+  .cs-lightbox img{
+    max-width:min(420px,90vw);
+    max-height:85vh;
+    border-radius:28px;
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
+  }
+  .cs-lightbox-close{
+    position:absolute;top:1.5rem;right:1.5rem;
+    width:42px;height:42px;border-radius:50%;
+    background:rgba(255,255,255,.1);
+    color:#fff;border:1px solid rgba(255,255,255,.25);
+    font-size:1.3rem;line-height:1;cursor:pointer;
+  }
+
+  #skeleton{padding:4rem 2rem;text-align:center;font-family:'Geist Mono',monospace;color:var(--muted)}
+
+  .cs-walk-tabs{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    width:fit-content !important;
+    max-width:100% !important;
+    gap:.35rem !important;
+    background:rgba(0,0,0,.045);
+    padding:.3rem !important;
+    border-radius:100px !important;
+    margin:0 !important;
+  }
+  .cs-walk-tab{
+    display:flex !important;
+    flex-direction:row !important;
+    flex:0 0 auto !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:auto !important;
+    height:auto !important;
+    padding:.45rem 1rem !important;
+    margin:0 !important;
+    font-size:.78rem !important;
+    line-height:1.2 !important;
+    border-radius:100px !important;
+    border:none !important;
+    background:transparent !important;
+    color:var(--muted);
+    font-weight:600;
+    white-space:nowrap;
+    gap:.4rem;
+  }
+  .cs-walk-tab .cs-walk-tab-dot{
+    width:6px;height:6px;border-radius:50%;
+    background:currentColor;
+    opacity:.5;
+    flex:0 0 auto;
+  }
+  .cs-walk-tab.active{
+    background:#fff !important;
+    color:var(--text,#111);
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+  }
+  .cs-walk-tab.active .cs-walk-tab-dot{
+    background:var(--green,#1D5CFF);
+    opacity:1;
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<a href="https://wa.me/967778420917" target="_blank" class="wa-fab" id="wa-fab" aria-label="WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button class="btt" id="btt" aria-label="Back to top"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+
+<nav id="nav">
+  <a class="nav-logo" href="../index.html">Yunes Al-Khaledi <span class="nav-dot"></span></a>
+  <div class="nav-right">
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#hero-section" data-i18n="nav.home">Home</a></li>
+      <li><a href="../index.html#projects" class="active" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="../index.html#about" data-i18n="nav.about">About</a></li>
+      <li><a href="../index.html#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="../index.html#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="../index.html#certifications" data-i18n="nav.certifications">Certifications</a></li>
+      <li><a href="https://github.com/Yonas4" target="_blank">GitHub</a></li>
+      <li><a href="../index.html#contact" class="nav-hire" data-i18n="nav.hire">Hire me</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="lang-switch-btn" id="lang-toggle" onclick="window.I18n && window.I18n.toggleLanguage()" style="font-family:'Cairo','Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.78rem;padding:.35rem .75rem;border-radius:100px;border:1.5px solid var(--border2);background:transparent;color:var(--ink);cursor:pointer;transition:all .2s">عربي</button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg viewBox="0 0 24 24" class="icon-sun"><circle cx="12" cy="12" r="5"/></svg></button>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../index.html#hero-section" data-i18n="nav.home">Home</a>
+  <a href="../index.html#projects" class="active" data-i18n="nav.projects">Projects</a>
+  <a href="../index.html#about" data-i18n="nav.about">About</a>
+  <a href="../index.html#experience" data-i18n="nav.experience">Experience</a>
+  <a href="../index.html#skills" data-i18n="nav.skills">Skills</a>
+  <a href="../index.html#certifications" data-i18n="nav.certifications">Certifications</a>
+  <a href="https://github.com/Yonas4" target="_blank">GitHub ↗</a>
+  <a href="javascript:void(0)" id="mob-lang-toggle" onclick="window.I18n && window.I18n.toggleLanguage()" style="font-weight:700;color:var(--green)">عربي</a>
+  <a href="../index.html#contact" class="m-hire" data-i18n="nav.hire">Hire me</a>
+</div>
+
+<div class="cs-back">
+  <a href="../index.html#projects" data-i18n="case.back">← Back to Portfolio</a>
+</div>
+
+<div id="skeleton" data-i18n="proj.loading">Loading project…</div>
+<div id="project-root" style="display:none"></div>
+<div class="cs-lightbox" id="cs-lightbox">
+  <button class="cs-lightbox-close" id="cs-lightbox-close" aria-label="Close">✕</button>
+  <img id="cs-lightbox-img" src="" alt="Screenshot preview"/>
+</div>
+
+<footer>
+  <span>© <span id="copy-year"></span> Yunes Al-Khaledi</span>
+  <a href="javascript:void(0)" id="em-link-footer" style="font-family:'Geist Mono',monospace;font-size:.73rem;color:var(--contact-label);text-decoration:none">yunes.alkhaledi@gmail.com</a>
+  <span style="font-family:'Geist Mono',monospace" data-i18n="footer.role">Senior Flutter Developer · Aden, Yemen</span>
+</footer>
+
+<script src="../../script.js"></script>
+<script src="../../js/translations.js"></script>
+<script src="../../js/js-yaml.min.js"></script>
+<script src="../../js/site-data.js"></script>
+<script>
+async function renderProject() {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("slug");
+  const skeleton = document.getElementById("skeleton");
+  const root = document.getElementById("project-root");
+  const isAr = window.I18n ? window.I18n.getCurrentLang() === "ar" : false;
+
+  if (!slug) {
+    skeleton.textContent = isAr ? "لم يتم تحديد مشروع." : "No project specified. Use project.html?slug=your-project-slug";
+    return;
+  }
+
+  let rawP;
+  try {
+    rawP = await SiteData.fetchProject(slug, "../../");
+  } catch (e) {
+    skeleton.textContent = isAr ? "تعذر تحميل المشروع: " + (e.message || e) : "Couldn't load project '" + slug + "': " + (e.message || e);
+    return;
+  }
+
+  const CAPABILITY_SVG_ICONS = {
+    trending: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>`,
+    chart: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>`,
+    zap: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+    analytics: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+    lock: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+    shield: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    briefcase: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
+    rocket: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>`,
+    smartphone: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>`,
+    cart: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>`,
+    search: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
+    truck: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+    bag: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
+    heart: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+    tag: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>`,
+    globe: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+    store: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+    card: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>`,
+    package: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+    mapPin: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    building: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15.01" y2="22.01"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15.01" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15.01" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15.01" y2="14.01"/><line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15.01" y2="18.01"/></svg>`,
+    megaphone: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>`,
+    award: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>`,
+    navigation: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>`,
+    coffee: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>`,
+    menu: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+    dollar: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    newspaper: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>`,
+    bell: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>`,
+    droplet: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`,
+    database: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
+    check: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
+  };
+
+  const EMOJI_TO_KEY = {
+    "📈": "trending", "💰": "dollar", "📊": "analytics", "🔐": "lock", "🔒": "lock",
+    "🌐": "globe", "⚡": "zap", "💼": "briefcase", "🚀": "rocket", "📱": "smartphone",
+    "🛒": "cart", "🔍": "search", "🚚": "truck", "🛍️": "bag", "💝": "heart",
+    "👟": "tag", "🏃": "award", "🌍": "globe", "🏪": "store", "💳": "card",
+    "📦": "package", "🗺️": "mapPin", "🏬": "building", "📣": "megaphone", "🎉": "award",
+    "📍": "mapPin", "🏢": "building", "🍽️": "coffee", "📋": "menu", "📰": "newspaper",
+    "🔔": "bell", "💧": "droplet", "🗄️": "database", "✨": "award"
+  };
+
+  function resolveCapabilitySvg(icon) {
+    if (!icon) return CAPABILITY_SVG_ICONS.check;
+    if (typeof icon === "string" && icon.trim().startsWith("<svg")) return icon;
+    const key = EMOJI_TO_KEY[icon] || icon;
+    return CAPABILITY_SVG_ICONS[key] || CAPABILITY_SVG_ICONS.check;
+  }
+
+  const p = rawP;
+
+  document.title = (p.name || "Project") + " — " + (isAr ? "دراسة حالة | يونس الخالدي" : "Case Study | Yunes Al-Khaledi");
+  document.getElementById("page-title").textContent = document.title;
+
+  const stats = (p.stats || []).map(s => `
+    <div class="cs-stat"><span class="cs-stat-n">${escapeHtml(s.number)}</span><span class="cs-stat-l">${escapeHtml(s.label)}</span></div>
+  `).join("");
+
+  const caps = (p.capabilities || []).map(c => `
+    <div class="cs-cap"><div class="cs-cap-ico">${resolveCapabilitySvg(c.icon)}</div><div class="cs-cap-tx"><b>${escapeHtml(c.title)}</b><p>${escapeHtml(c.description)}</p></div></div>
+  `).join("");
+
+  const flowArrow = isAr ? "←" : "→";
+  const flow = (p.architecture_flow || []).map((step, i, arr) => {
+    const label = (step && typeof step === "object") ? (step.step || "") : step;
+    const arrow = i < arr.length - 1 ? `<span class="cs-flow-arrow">${flowArrow}</span>` : "";
+    return `<span class="cs-flow-step">${escapeHtml(label)}</span>${arrow}`;
+  }).join("");
+
+  const flow2 = (p.architecture_flow_2 || []).map((step, i, arr) => {
+    const label = (step && typeof step === "object") ? (step.step || "") : step;
+    const arrow = i < arr.length - 1 ? `<span class="cs-flow-arrow">${flowArrow}</span>` : "";
+    return `<span class="cs-flow-step">${escapeHtml(label)}</span>${arrow}`;
+  }).join("");
+
+  const banner = p.banner ? `
+    <div style="grid-column:1/-1">
+      <img src="../../${escapeAttr(p.banner)}" alt="${escapeAttr(p.name)} Screenshots Banner" style="width:100%;border-radius:18px;display:block;">
+    </div>` : "";
+
+  const mockups = (p.mockups || []).map(m => `
+    <div class="cs-mockup">
+      <div class="cs-phone-mini" data-lightbox-src="../../${escapeAttr(m.image)}">
+        <div class="cs-phone-mini-inner"><img src="../../${escapeAttr(m.image)}" alt="${escapeAttr(m.caption ||"")}"/></div>
+      </div>
+      <span class="cs-mockup-cap">${escapeHtml(m.caption || "")}</span>
+    </div>
+  `).join("");
+
+  const hasVideo = !!p.video;
+  const hasMockups = (p.mockups || []).length > 0;
+
+  const tabMockupsLabel = window.I18n ? window.I18n.t("case.tab_mockups") : "Screenshots";
+  const tabVideoLabel = window.I18n ? window.I18n.t("case.tab_video") : "Emulator Walkthrough";
+
+  const walkTabs = hasVideo && hasMockups ? `
+    <div class="cs-walk-tabs">
+      <div class="cs-walk-tab active" data-walk="mockups"><span class="cs-walk-tab-dot"></span><span class="cs-walk-tab-nm">${tabMockupsLabel}</span></div>
+      <div class="cs-walk-tab" data-walk="video"><span class="cs-walk-tab-dot"></span><span class="cs-walk-tab-nm">${tabVideoLabel}</span></div>
+    </div>` : "";
+  const walkNote = hasVideo && hasMockups ? `<p class="cs-walk-note">${isAr ? "يتم عرض نماذج الشاشات افتراضياً. اضغط على المعاينة التفاعلية لمشاهدة فيديو المحاكي الكامل." : "Static mockups shown by default — toggle to Video Demo for the full emulator walkthrough."}</p>` : "";
+
+  const challenges = (p.challenges || []).map(c => `
+    <div class="cs-challenge"><div class="cs-ch-label">${escapeHtml(c.label)}</div><div class="cs-ch-body"><b>${escapeHtml(c.title)}</b><p>${escapeHtml(c.description || c.body || "")}</p></div></div>
+  `).join("");
+
+  const techTags = (p.tech_tags || []).map(t => `<span class="tag hi">${escapeHtml(t.tag || t)}</span>`).join("");
+
+  const SVG_GITHUB = `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`;
+  const SVG_APP_STORE = `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.61 1.34-.55.63-1.03 1.65-.9 2.67 1 .08 2.01-.5 2.59-1.16z"/></svg>`;
+  const SVG_GOOGLE_PLAY = `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.914c-.2-.53-.3-.984-.3-1.464V4.192c0-.48.1-.934.3-1.464.15-.403.364-.72.61-.914zM15.207 13.414l2.586 2.586-12.75 7.361 10.164-9.947zM18.828 12l-2.207-2.207L15.207 10.586l3.621 1.414zm-3.621-1.414L5.043.639 17.793 8l-2.586 2.586z"/></svg>`;
+  const SVG_EXT = `<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>`;
+
+  const links = p.links || {};
+  const linkButtons = [
+    links.github ? `<a href="${escapeAttr(links.github)}" target="_blank" rel="noopener" class="pl pl-store">${SVG_GITHUB} <span>${window.I18n ? window.I18n.t("proj.store_github") : "GitHub"}</span> ${SVG_EXT}</a>` : "",
+    links.app_store ? `<a href="${escapeAttr(links.app_store)}" target="_blank" rel="noopener" class="pl pl-store">${SVG_APP_STORE} <span>${window.I18n ? window.I18n.t("proj.store_apple") : "App Store"}</span> ${SVG_EXT}</a>` : "",
+    links.google_play ? `<a href="${escapeAttr(links.google_play)}" target="_blank" rel="noopener" class="pl pl-store">${SVG_GOOGLE_PLAY} <span>${window.I18n ? window.I18n.t("proj.store_play") : "Google Play"}</span> ${SVG_EXT}</a>` : "",
+  ].join("");
+
+  const tScreensTag = window.I18n ? window.I18n.t("case.screens_tag") : "App Preview & Screens";
+  const tScreensTitle = window.I18n ? window.I18n.t("case.screens_title") : "Screenshots & Interface";
+  const tOverview = window.I18n ? window.I18n.t("case.overview_title") : "Overview";
+  const tCapsTag = window.I18n ? window.I18n.t("case.caps_tag") : "Core Capabilities";
+  const tCapsTitle = window.I18n ? window.I18n.t("case.caps_title") : "What the app does";
+  const tArchTag = window.I18n ? window.I18n.t("case.arch_tag") : "Architecture";
+  const tArchTitle = window.I18n ? window.I18n.t("case.arch_title") : "How it's built";
+  const tChalTag = window.I18n ? window.I18n.t("case.challenges_tag") : "Problems Solved";
+  const tChalTitle = window.I18n ? window.I18n.t("case.challenges_title") : "Real engineering challenges";
+  const tTechTag = window.I18n ? window.I18n.t("case.tech_tag") : "Technologies Employed";
+  const tTechTitle = window.I18n ? window.I18n.t("case.tech_title") : "Built with";
+
+  root.innerHTML = `
+    <div class="cs-hero">
+      ${p.icon ? `<div class="cs-icon"><img src="../../${escapeAttr(p.icon)}" alt="${escapeAttr(p.name)} icon"/></div>` : ""}
+      <div>
+        <div class="cs-tag">${escapeHtml(p.badge || "Project")}${p.category ? " · " + escapeHtml(p.category): ""}</div>
+        <h1 class="cs-title">${escapeHtml(p.name || "")}</h1>
+      </div>
+      <div class="cs-links">${linkButtons}</div>
+    </div>
+
+    ${(hasMockups || hasVideo) ? `
+    <div class="cs-walk" style="padding-top:1.5rem">
+      <div class="cs-walk-in">
+        <div class="cs-walk-head">
+          <div>
+            <div class="sec-tag">${tScreensTag}</div>
+            <h2 class="cs-h2" style="font-size:1.75rem">${tScreensTitle}</h2>
+          </div>
+          ${walkTabs}
+        </div>
+        ${walkNote}
+        ${hasMockups ? `<div class="cs-mockup-grid" data-walk-panel="mockups">${banner}${mockups}</div>` : ""}
+        ${hasVideo ? `
+        <div class="cs-phone-wrap" data-walk-panel="video" style="${hasMockups ? "display:none" : ""}">
+          <span class="cs-phone-lbl">${tabVideoLabel}</span>
+          <div class="cs-phone">
+            <div class="cs-phone-screen">
+              <video controls playsinline preload="metadata">
+                <source src="../../${escapeAttr(p.video)}" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>` : ""}
+      </div>
+    </div>` : ""}
+
+    ${p.overview || stats ? `
+    <div class="cs-band">
+      <div class="cs-overview">
+        <div>
+          <div class="cs-h2">${tOverview}</div>
+          <p>${(p.overview || "").replace(/\n\n/g, "<br><br>")}</p>
+        </div>
+        ${stats ? `<div class="cs-stats">${stats}</div>` : ""}
+      </div>
+    </div>` : ""}
+
+    ${caps ? `
+    <section class="cs-caps">
+      <div class="sec-tag">${tCapsTag}</div>
+      <h2 class="cs-h2" style="font-size:1.75rem;margin-bottom:2rem">${tCapsTitle}</h2>
+      <div class="cs-cap-grid">${caps}</div>
+    </section>` : ""}
+
+    ${p.architecture_text || flow ? `
+    <div class="cs-arch">
+      <div class="cs-arch-in">
+        <div class="sec-tag">${tArchTag}</div>
+        <h2 class="cs-h2" style="font-size:1.75rem">${tArchTitle}</h2>
+        <p>${(p.architecture_text || "").replace(/\n\n/g, "<br><br>")}</p>
+        ${flow ? `<div class="cs-flow">${flow}</div>` : ""}
+        ${flow2 ? `<div class="cs-flow" style="margin-top:1rem">${flow2}</div>` : ""}
+      </div>
+    </div>` : ""}
+
+    ${challenges ? `
+    <section class="cs-challenges">
+      <div class="sec-tag">${tChalTag}</div>
+      <h2 class="cs-h2" style="font-size:1.75rem;margin-bottom:2rem">${tChalTitle}</h2>
+      ${challenges}
+    </section>` : ""}
+
+    ${techTags ? `
+    <div class="cs-tech-band">
+      <div class="cs-tech-in">
+        <div class="sec-tag" style="justify-content:center">${tTechTag}</div>
+        <h2 class="cs-h2" style="font-size:1.5rem">${tTechTitle}</h2>
+        <div class="cs-tech-tags">${techTags}</div>
+      </div>
+    </div>` : ""}`;
+
+  skeleton.style.display = "none";
+  root.style.display = "";
+
+  // Walkthrough tab toggle
+  document.querySelectorAll(".cs-walk-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".cs-walk-tab").forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      const target = tab.getAttribute("data-walk");
+      document.querySelectorAll("[data-walk-panel]").forEach(panel => {
+        panel.style.display = panel.getAttribute("data-walk-panel") === target ? "" : "none";
+      });
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById("cs-lightbox");
+  const lightboxImg = document.getElementById("cs-lightbox-img");
+  document.querySelectorAll("[data-lightbox-src]").forEach(el => {
+    el.addEventListener("click", () => {
+      lightboxImg.src = el.getAttribute("data-lightbox-src");
+      lightbox.classList.add("open");
+    });
+  });
+  function closeLightbox() { lightbox.classList.remove("open"); lightboxImg.src = ""; }
+  document.getElementById("cs-lightbox-close").addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+}
+
+window.renderProjectDetail = renderProject;
+
+function escapeHtml(str) {
+  if (str == null) return "";
+  return String(str).replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+}
+function escapeAttr(str) { return escapeHtml(str); }
+
+renderProject();
+</script>
+</body>
+</html>
