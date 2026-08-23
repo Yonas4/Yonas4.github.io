@@ -20,14 +20,28 @@
  */
 (function (window) {
   // Resolve paths from this script's own URL so it works at any page depth
-  // (/index.html and /projects/project.html) and under any mount point.
-  const SCRIPT_URL = (document.currentScript && document.currentScript.src) || "";
-  const SITE_ROOT = SCRIPT_URL ? SCRIPT_URL.replace(/js\/site-data\.js(?:\?.*)?$/, "") : "/";
+  // (/index.html and /projects/project.html, /en/projects/project.html)
+  function getSiteRoot() {
+    if (typeof document !== "undefined") {
+      if (document.currentScript && document.currentScript.src) {
+        return document.currentScript.src.replace(/js\/site-data\.js(?:\?.*)?$/, "");
+      }
+      const scripts = document.getElementsByTagName("script");
+      for (let i = 0; i < scripts.length; i++) {
+        const src = scripts[i].src || "";
+        if (src.includes("js/site-data.js")) {
+          return src.replace(/js\/site-data\.js(?:\?.*)?$/, "");
+        }
+      }
+    }
+    return "";
+  }
+
+  const SITE_ROOT = getSiteRoot();
   const DATA_BASE = SITE_ROOT + "data/projects/";
   const MANIFEST_URL = DATA_BASE + "index.json";
 
-  // Fallback only: used if the manifest is missing (e.g. the generator workflow
-  // has not run yet). Costs a rate-limited API call, so it is never the happy path.
+  // Fallback only: used if the manifest is missing
   const REPO = "Yonas4/Yonas4.github.io";
   const BRANCH = "main";
   const LIST_URL = `https://api.github.com/repos/${REPO}/contents/data/projects?ref=${BRANCH}`;
@@ -43,8 +57,9 @@
   }
 
   /** Full record for one project, straight from its markdown file. */
-  async function fetchProject(slug) {
-    const res = await fetch(`${DATA_BASE}${encodeURIComponent(slug)}.md`);
+  async function fetchProject(slug, customBase) {
+    const base = customBase ? (customBase + "data/projects/") : DATA_BASE;
+    const res = await fetch(`${base}${encodeURIComponent(slug)}.md`);
     if (!res.ok) throw new Error("Project not found: " + slug + " (HTTP " + res.status + ")");
     const { data, body } = parseFrontmatter(await res.text());
     return { slug, ...data, body };
@@ -52,11 +67,10 @@
 
   /**
    * Card-level records for every project, in display order — ONE request.
-   * The manifest carries only the fields the card renderers use; call
-   * fetchProject(slug) for the full case study record.
    */
-  async function fetchAllProjects() {
-    const res = await fetch(MANIFEST_URL);
+  async function fetchAllProjects(customBase) {
+    const manifestUrl = customBase ? (customBase + "data/projects/index.json") : MANIFEST_URL;
+    const res = await fetch(manifestUrl);
     if (res.ok) {
       const manifest = await res.json();
       const projects = Array.isArray(manifest) ? manifest : manifest.projects || [];

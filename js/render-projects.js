@@ -310,7 +310,7 @@
     const isAr = window.I18n ? window.I18n.getCurrentLang() === "ar" : false;
 
     try {
-      const allProjects = await SiteData.fetchAllProjects();
+      const allProjects = await SiteData.fetchAllProjects(ICON_BASE);
 
       if (!allProjects.length) {
         grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:3rem;font-family:'Geist Mono',monospace;color:var(--muted)">No projects yet</div>`;

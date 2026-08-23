@@ -108,9 +108,17 @@ function main() {
   const newest = projects.map((p) => p.lastmod).sort().pop();
   const urls = [
     { loc: `${ORIGIN}/`, lastmod: newest, changefreq: "monthly", priority: "1.0" },
+    { loc: `${ORIGIN}/en/`, lastmod: newest, changefreq: "monthly", priority: "1.0" },
     { loc: `${ORIGIN}/projects/all-projects.html`, lastmod: newest, changefreq: "monthly", priority: "0.8" },
+    { loc: `${ORIGIN}/en/projects/all-projects.html`, lastmod: newest, changefreq: "monthly", priority: "0.8" },
     ...projects.map((p) => ({
       loc: `${ORIGIN}/projects/project.html?slug=${encodeURIComponent(p.slug)}`,
+      lastmod: p.lastmod,
+      changefreq: "yearly",
+      priority: "0.7",
+    })),
+    ...projects.map((p) => ({
+      loc: `${ORIGIN}/en/projects/project.html?slug=${encodeURIComponent(p.slug)}`,
       lastmod: p.lastmod,
       changefreq: "yearly",
       priority: "0.7",
