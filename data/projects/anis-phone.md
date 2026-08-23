@@ -19,18 +19,18 @@ stats:
   - number: UX
     label: Focused design & fast checkout
 capabilities:
-  - icon: 📱
-    title: Apple Product Catalog
-    description: Browse original iPhones and genuine Apple accessories with organized categories and detailed product information.
-  - icon: 🛒
-    title: Smooth Checkout
-    description: Fast and secure checkout experience with organized cart management and delivery options.
-  - icon: 🔍
-    title: Product Discovery
-    description: UX-focused design with intuitive navigation and search to find products quickly.
-  - icon: 🚚
-    title: Delivery Service
-    description: Integrated delivery service covering Aden with order tracking capabilities.
+  - icon: smartphone
+    title: Apple Products Catalog
+    description: Browsing categorized iPhone models and accessories with detailed specs, pricing, and high-res imagery.
+  - icon: cart
+    title: Smart Cart & Instant Checkout
+    description: Add-to-cart, quantity adjustments, totals calculation, and streamlined checkout for quick orders.
+  - icon: search
+    title: UX-First Browsing
+    description: Clean navigation designed to help customers find exact storage sizes, colors, and models in seconds.
+  - icon: truck
+    title: Order & Delivery Support
+    description: Direct order fulfillment and delivery tracking tailored to customers in Aden. with order tracking capabilities.
 architecture_text: >
   Built with Flutter using Clean Architecture and GoRouter for type-safe navigation. REST API integration handles product catalog, cart management, and order processing. UI designed from Figma mockups for pixel-perfect implementation.
 architecture_flow:

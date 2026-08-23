@@ -19,24 +19,24 @@ stats:
   - number: "9+"
     label: Live apps shipped to stores
 capabilities:
-  - icon: 📈
+  - icon: trending
     title: Real-time Market Data
-    description: Live market analytics and portfolio tracking that updates in real time, helping users make informed financial decisions.
-  - icon: 💰
-    title: Zero Commission Trading
-    description: Unlimited trading with no extra fees or commissions — making investing truly accessible to everyone.
-  - icon: 📊
-    title: Modern Analytical Tools
-    description: Advanced charting and analysis tools that guide users to understand market movements and portfolio performance.
-  - icon: 🔐
-    title: Secure Data Handling
-    description: Clean Architecture with strict layer separation ensuring sensitive user data and complex business logic are handled securely.
-  - icon: 🌐
-    title: Thousands of Assets
-    description: Browse thousands of stocks and ETFs with detailed information on each, finding the right investment for any strategy.
-  - icon: ⚡
-    title: Optimized Performance
-    description: Real-time data rendering optimized for speed and reliability, delivering a smooth experience even with complex financial data.
+    description: Live market analytics and portfolio tracking in real time to help users make informed decisions.
+  - icon: dollar
+    title: Commission-Free Trading
+    description: Unlimited trading with zero commission, making investing accessible to everyone.
+  - icon: analytics
+    title: Advanced Analytics
+    description: Smart analytics tools that help users understand the market and their portfolio performance.
+  - icon: lock
+    title: High-Security Data Handling
+    description: Strict separation of concerns (UI, Domain, Data) ensuring financial data is handled safely.
+  - icon: globe
+    title: 1000s of Assets (ETFs & Stocks)
+    description: Browse thousands of stocks and ETFs with in-depth information on every single asset.
+  - icon: zap
+    title: High Performance & Reliability
+    description: Instant rendering of real-time data for a buttery-smooth trading experience.
 architecture_text: >
   Built with Clean Architecture following Uncle Bob's principles — strict UI / Domain / Data layer separation for scalability, testability, and long-term maintainability. Riverpod with code generation handles state management, while AutoRoute provides type-safe navigation. REST APIs are secured with encryption and token-based authentication.
 architecture_flow:

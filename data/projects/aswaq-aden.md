@@ -19,18 +19,18 @@ stats:
   - number: "2018"
     label: First of its kind in Aden
 capabilities:
-  - icon: 🗺️
-    title: Google Maps Integration
-    description: Browse shopping stores and commercial locations across Aden with integrated Google Maps for easy navigation and directions.
-  - icon: 🏬
-    title: Business Directory
-    description: Comprehensive listing of all commercial establishments with data, locations, and contact information.
-  - icon: 📣
-    title: Marketing Platform
-    description: Electronic marketing coverage for businesses including photography, content writing, and social media promotion.
-  - icon: 🎉
-    title: Events & Promotions
-    description: Coverage of festivals, competitions, store openings, and discount offers across Aden.
+  - icon: mapPin
+    title: Google Maps Directory
+    description: View commercial locations on an interactive map with turn-by-turn navigation and contact information.
+  - icon: building
+    title: Comprehensive Business Index
+    description: Hundreds of business listings organized by sector with addresses, phone numbers, and working hours.
+  - icon: megaphone
+    title: Marketing Coverage
+    description: Full marketing package for businesses including photography, social promotions, and app listing.
+  - icon: award
+    title: Events & Offers
+    description: Continuous coverage of openings, promotions, festivals, and exclusive discounts in Aden.rs across Aden.
 architecture_text: >
   Built with Flutter for Android and iOS with Google Maps SDK integration for location services. REST API handles business listings and data, while Material Design ensures a clean, intuitive interface.
 architecture_flow:

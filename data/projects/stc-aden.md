@@ -18,15 +18,15 @@ stats:
   - number: Aden
     label: Governorate coverage
 capabilities:
-  - icon: 📰
-    title: Real-time News Feed
-    description: Live news feed integrated with Jaridah CMS for instant content delivery and updates.
-  - icon: 🔔
+  - icon: newspaper
+    title: Live News Feed
+    description: Real-time news updates and official announcements powered by Jaridah CMS.
+  - icon: bell
     title: Push Notifications
-    description: Firebase Cloud Messaging delivers breaking news alerts and important announcements directly to users.
-  - icon: 📱
+    description: Instant alerts for breaking news and important announcements via Firebase Cloud Messaging.
+  - icon: smartphone
     title: Clean Reading Experience
-    description: Optimized reading interface with categorized news sections and smooth navigation.
+    description: Smooth reading interface organized by category with easy sharing capabilities.mooth navigation.
 architecture_text: >
   Built with Flutter and integrated with YOU-IT's Jaridah CMS via REST API. Firebase Cloud Messaging handles push notifications for breaking news delivery.
 architecture_flow:

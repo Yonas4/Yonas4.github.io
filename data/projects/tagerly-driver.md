@@ -19,18 +19,18 @@ stats:
   - number: Aden
     label: City-wide coverage
 capabilities:
-  - icon: 🚚
-    title: Order Dispatch
-    description: Receive and manage delivery assignments from multiple e-commerce stores with organized queue management.
-  - icon: 📍
+  - icon: truck
+    title: Order Dispatching
+    description: Drivers receive and accept delivery tasks from multiple connected online stores.
+  - icon: navigation
     title: Route Management
-    description: Track delivery routes and update order statuses in real time for efficient fulfillment.
-  - icon: 🏢
-    title: Multi-Company Support
-    description: Multiple delivery companies can register and operate through the platform, serving various e-commerce merchants.
-  - icon: 📊
-    title: Delivery Analytics
-    description: Track delivery performance, completion rates, and earnings across shifts.
+    description: Real-time route planning and status updates ensure fast and accurate deliveries.
+  - icon: building
+    title: Multi-Company Platform
+    description: Multiple shipping and delivery companies operate on a single shared platform.
+  - icon: analytics
+    title: Performance Tracking
+    description: Drivers and dispatchers monitor delivery metrics, completed orders, and daily earnings. across shifts.
 architecture_text: >
   Built with Flutter using Clean Architecture principles. REST API integration handles order dispatch, status updates, and real-time tracking. The app communicates with the Tagerly backend ecosystem for seamless e-commerce delivery coordination.
 architecture_flow:

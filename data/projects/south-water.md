@@ -18,18 +18,18 @@ stats:
   - number: Track
     label: Delivery tracking
 capabilities:
-  - icon: 💧
-    title: Water Delivery
-    description: On-demand water delivery service covering all areas in Aden Governorate.
-  - icon: 📍
-    title: Area Selection
-    description: Choose your delivery area from a comprehensive list covering the entire governorate.
-  - icon: 📦
+  - icon: droplet
+    title: Water Delivery On-Demand
+    description: Simple ordering flow for bottled and gallon water with quantity options and fast delivery.
+  - icon: mapPin
+    title: Area-Based Delivery
+    description: Street and neighborhood selection across all directorates of Aden for accurate delivery.
+  - icon: package
     title: Order Management
-    description: Place and track orders with real-time delivery status updates.
-  - icon: 🗄️
+    description: Order placement, delivery scheduling, and status tracking from warehouse to doorstep.
+  - icon: database
     title: Local Storage
-    description: Offline-capable with SQLite for storing order history and user preferences.
+    description: SQLite local database for offline order history and customer address management.ces.
 architecture_text: >
   Built with Flutter using Firebase for backend services and SQLite for local data persistence. REST API handles order placement and delivery tracking.
 architecture_flow:

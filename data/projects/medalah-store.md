@@ -19,18 +19,18 @@ stats:
   - number: Secure
     label: Firebase-backed checkout
 capabilities:
-  - icon: 🛍️
-    title: Brand Product Catalog
-    description: Browse branded merchandise — T-shirts, mugs, bags — with detailed descriptions, specifications, and manufacturing details.
-  - icon: 💝
-    title: Community Support
-    description: Every purchase directly funds the foundation's community projects and raises awareness about its activities.
-  - icon: 🔒
+  - icon: bag
+    title: Branded Product Catalog
+    description: High-quality apparel, drinkware, and accessories featuring Medalah Foundation's visual identity.
+  - icon: heart
+    title: Community Impact
+    description: Every purchase directly supports community projects and non-profit initiatives funded by the foundation.
+  - icon: lock
     title: Secure Payments
-    description: Secure payment options integrated within the app for a safe shopping experience.
-  - icon: 🛒
-    title: Shopping Cart
-    description: Full cart management with product sections, quantities, and smooth checkout flow.
+    description: Safe and reliable payment processing integrated into the mobile app for trusted transactions.
+  - icon: cart
+    title: Cart & Order Management
+    description: Complete shopping flow from item selection to order tracking, built for smooth user experience.kout flow.
 architecture_text: >
   Built with Flutter and powered by Firebase for backend services including real-time database, cloud storage, and push notifications. Material Design principles ensure a clean, brand-aligned user interface.
 architecture_flow:

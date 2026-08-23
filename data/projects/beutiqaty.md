@@ -16,21 +16,21 @@ stats:
     label: On Google Play & App Store
   - number: Multi
     label: Vendor marketplace
-  - number: "💰"
+  - number: High ROI
     label: Cost-effective for merchants
 capabilities:
-  - icon: 🏪
-    title: Multi-Vendor Platform
-    description: Multiple retail merchants can list and sell products through a single app, reaching more customers without individual store development.
-  - icon: 🛍️
-    title: Product Discovery
-    description: Customers browse products from various boutiques in one place with organized categories and search.
-  - icon: 💳
-    title: Secure Checkout
-    description: Integrated payment and checkout flow supporting multiple merchants in a single cart.
-  - icon: 📦
-    title: Order Management
-    description: Order routing to the correct merchant with tracking and delivery coordination.
+  - icon: store
+    title: Multi-Store Marketplace
+    description: Multiple boutique owners list and sell products on a single shared platform without building separate apps.
+  - icon: bag
+    title: Boutique Product Discovery
+    description: Browse collections from Aden's fashion boutiques in one place with smart filters and categorization.
+  - icon: card
+    title: Unified Checkout
+    description: Single checkout experience across multiple stores with integrated delivery calculations.
+  - icon: package
+    title: Order Routing & Delivery
+    description: Orders automatically route to the appropriate boutique with status tracking from preparation to dispatch.ion.
 architecture_text: >
   Built with Flutter and integrated with REST APIs for product catalog, multi-vendor cart management, and order processing. Firebase handles authentication, notifications, and analytics.
 architecture_flow:

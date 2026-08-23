@@ -19,18 +19,18 @@ stats:
   - number: Simple
     label: Clean, intuitive interface
 capabilities:
-  - icon: 🍽️
+  - icon: coffee
     title: Restaurant Discovery
-    description: Browse restaurants across Aden by category, cuisine type, and location.
-  - icon: 📋
-    title: Full Menu Access
-    description: View complete menus with pricing, descriptions, and estimated order totals.
-  - icon: 📍
-    title: Location & Directions
-    description: Get restaurant addresses and directions for easy navigation.
-  - icon: 💰
+    description: Browse Aden's dining venues organized by cuisine, neighborhood, and food category.
+  - icon: menu
+    title: Full Menus & Prices
+    description: Complete menus with dishes, up-to-date pricing, ingredients, and food photography.
+  - icon: mapPin
+    title: Locations & Contacts
+    description: Quick access to venue locations, phone numbers, and working hours.
+  - icon: dollar
     title: Price Estimation
-    description: Calculate estimated order totals before visiting, helping plan dining budgets.
+    description: Interactive calculation tool to estimate total dining and order costs before visiting., helping plan dining budgets.
 architecture_text: >
   Built with Flutter using REST API integration for restaurant data, menus, and pricing. Material Design principles ensure a clean, food-friendly user interface.
 architecture_flow:

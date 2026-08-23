@@ -19,18 +19,18 @@ stats:
   - number: "28"
     label: Olympic committees supplied
 capabilities:
-  - icon: 👟
-    title: Sports Product Catalog
-    description: Browse a wide range of shoes, clothing, and sportswear with detailed product information and sizing guides.
-  - icon: 🛒
-    title: E-Commerce Experience
-    description: Full shopping experience with cart management, secure checkout, and order tracking.
-  - icon: 🌍
-    title: Global Brand, Local App
-    description: Premium 361° brand experience tailored for the Yemen market with localized content and delivery options.
-  - icon: 🏃
+  - icon: tag
+    title: Global Sports Brand
+    description: Official store for 361° international sportswear brand in Yemen, with an extensive footwear and apparel catalog.
+  - icon: cart
+    title: Full E-Commerce Flow
+    description: Cart management, order placement, and delivery tracking built specifically for the Yemeni market.
+  - icon: globe
+    title: Localized for Yemen
+    description: Tailored specifically for Yemeni customers with local delivery options and regional support.
+  - icon: award
     title: Sports Categories
-    description: Organized categories covering running, football, swimming, and everyday sportswear.
+    description: Running, basketball, training, lifestyle, and sportswear categories with sizing guides and product details.l, swimming, and everyday sportswear.
 architecture_text: >
   Built with Flutter for cross-platform delivery on iOS and Android. REST API integration with the Tagerly e-commerce backend handles product catalog, cart, and order management. Firebase provides push notifications and analytics.
 architecture_flow:
