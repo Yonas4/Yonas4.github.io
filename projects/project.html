@@ -163,16 +163,17 @@
   <a class="nav-logo" href="../index.html">Yunes Al-Khaledi <span class="nav-dot"></span></a>
   <div class="nav-right">
     <ul class="nav-links" id="nav-links">
-      <li><a href="../index.html#hero-section">Home</a></li>
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#skills">Skills</a></li>
-      <li><a href="../index.html#experience">Experience</a></li>
-      <li><a href="../index.html#projects" class="active">Projects</a></li>
-      <li><a href="../index.html#certifications">Certifications</a></li>
+      <li><a href="../index.html#hero-section" data-i18n="nav.home">Home</a></li>
+      <li><a href="../index.html#projects" class="active" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="../index.html#about" data-i18n="nav.about">About</a></li>
+      <li><a href="../index.html#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="../index.html#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="../index.html#certifications" data-i18n="nav.certifications">Certifications</a></li>
       <li><a href="https://github.com/Yonas4" target="_blank">GitHub</a></li>
-      <li><a href="../index.html#contact" class="nav-hire">Hire me</a></li>
+      <li><a href="../index.html#contact" class="nav-hire" data-i18n="nav.hire">Hire me</a></li>
     </ul>
     <div class="nav-actions">
+      <button class="lang-switch-btn" id="lang-toggle" onclick="window.I18n &amp;&amp; window.I18n.toggleLanguage()" style="font-family:'Cairo','Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.78rem;padding:.35rem .75rem;border-radius:100px;border:1.5px solid var(--border2);background:transparent;color:var(--ink);cursor:pointer;transition:all .2s">عربي</button>
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg viewBox="0 0 24 24" class="icon-sun"><circle cx="12" cy="12" r="5"/></svg></button>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -180,21 +181,22 @@
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
-  <a href="../index.html#hero-section">Home</a>
-  <a href="../index.html#about">About</a>
-  <a href="../index.html#skills">Skills</a>
-  <a href="../index.html#experience">Experience</a>
-  <a href="../index.html#projects" class="active">Projects</a>
-  <a href="../index.html#certifications">Certifications</a>
+  <a href="../index.html#hero-section" data-i18n="nav.home">Home</a>
+  <a href="../index.html#projects" class="active" data-i18n="nav.projects">Projects</a>
+  <a href="../index.html#about" data-i18n="nav.about">About</a>
+  <a href="../index.html#experience" data-i18n="nav.experience">Experience</a>
+  <a href="../index.html#skills" data-i18n="nav.skills">Skills</a>
+  <a href="../index.html#certifications" data-i18n="nav.certifications">Certifications</a>
   <a href="https://github.com/Yonas4" target="_blank">GitHub ↗</a>
-  <a href="../index.html#contact" class="m-hire">Hire me</a>
+  <a href="javascript:void(0)" id="mob-lang-toggle" onclick="window.I18n &amp;&amp; window.I18n.toggleLanguage()" style="font-weight:700;color:var(--green)">اللغة: عربي / English</a>
+  <a href="../index.html#contact" class="m-hire" data-i18n="nav.hire">Hire me</a>
 </div>
 
 <div class="cs-back">
-  <a href="../index.html#projects">← Back to Portfolio</a>
+  <a href="../index.html#projects" data-i18n="case.back">← Back to Portfolio</a>
 </div>
 
-<div id="skeleton">Loading project…</div>
+<div id="skeleton" data-i18n="proj.loading">Loading project…</div>
 <div id="project-root" style="display:none"></div>
 <div class="cs-lightbox" id="cs-lightbox">
   <button class="cs-lightbox-close" id="cs-lightbox-close" aria-label="Close">✕</button>
@@ -204,10 +206,11 @@
 <footer>
   <span>© <span id="copy-year"></span> Yunes Al-Khaledi</span>
   <a href="javascript:void(0)" id="em-link-footer" style="font-family:'Geist Mono',monospace;font-size:.73rem;color:var(--contact-label);text-decoration:none">yunes.alkhaledi@gmail.com</a>
-  <span style="font-family:'Geist Mono',monospace">Senior Flutter Developer · Aden, Yemen</span>
+  <span style="font-family:'Geist Mono',monospace" data-i18n="footer.role">Senior Flutter Developer · Aden, Yemen</span>
 </footer>
 
 <script src="../script.js"></script>
+<script src="../js/translations.js"></script>
 <script src="../js/js-yaml.min.js"></script>
 <script src="../js/site-data.js"></script>
 <script>
@@ -216,21 +219,37 @@ async function renderProject() {
   const slug = params.get("slug");
   const skeleton = document.getElementById("skeleton");
   const root = document.getElementById("project-root");
+  const isAr = window.I18n ? window.I18n.getCurrentLang() === "ar" : false;
 
   if (!slug) {
-    skeleton.textContent = "No project specified. Use project.html?slug=your-project-slug";
+    skeleton.textContent = isAr ? "لم يتم تحديد مشروع." : "No project specified. Use project.html?slug=your-project-slug";
     return;
   }
 
-  let p;
+  let rawP;
   try {
-    p = await SiteData.fetchProject(slug);
+    rawP = await SiteData.fetchProject(slug);
   } catch (e) {
-    skeleton.textContent = "Couldn't load project '" + slug + "': " + (e.message || e);
+    skeleton.textContent = isAr ? "تعذر تحميل المشروع: " + (e.message || e) : "Couldn't load project '" + slug + "': " + (e.message || e);
     return;
   }
 
-  document.title = (p.name || "Project") + " — Case Study | Yunes Al-Khaledi";
+  // Merge Arabic project metadata if available and active
+  const arData = isAr && window.I18n ? window.I18n.getProjectArabic(slug) : null;
+  const p = arData ? {
+    ...rawP,
+    name: arData.name || rawP.name,
+    category: arData.category || rawP.category,
+    badge: arData.badge || rawP.badge,
+    short_description: arData.short_description || rawP.short_description,
+    overview: arData.overview || rawP.overview,
+    capabilities: arData.capabilities || rawP.capabilities,
+    architecture_text: arData.architecture_text || rawP.architecture_text,
+    challenges: arData.challenges || rawP.challenges,
+    stats: arData.stats || rawP.stats
+  } : rawP;
+
+  document.title = (p.name || "Project") + " — " + (isAr ? "دراسة حالة | يونس الخالدي" : "Case Study | Yunes Al-Khaledi");
   document.getElementById("page-title").textContent = document.title;
 
   const stats = (p.stats || []).map(s => `
@@ -241,15 +260,16 @@ async function renderProject() {
     <div class="cs-cap"><div class="cs-cap-ico">${escapeHtml(c.icon || "")}</div><div class="cs-cap-tx"><b>${escapeHtml(c.title)}</b><p>${escapeHtml(c.description)}</p></div></div>
   `).join("");
 
+  const flowArrow = isAr ? "←" : "→";
   const flow = (p.architecture_flow || []).map((step, i, arr) => {
     const label = (step && typeof step === "object") ? (step.step || "") : step;
-    const arrow = i < arr.length - 1 ? `<span class="cs-flow-arrow">→</span>` : "";
+    const arrow = i < arr.length - 1 ? `<span class="cs-flow-arrow">${flowArrow}</span>` : "";
     return `<span class="cs-flow-step">${escapeHtml(label)}</span>${arrow}`;
   }).join("");
 
   const flow2 = (p.architecture_flow_2 || []).map((step, i, arr) => {
     const label = (step && typeof step === "object") ? (step.step || "") : step;
-    const arrow = i < arr.length - 1 ? `<span class="cs-flow-arrow">→</span>` : "";
+    const arrow = i < arr.length - 1 ? `<span class="cs-flow-arrow">${flowArrow}</span>` : "";
     return `<span class="cs-flow-step">${escapeHtml(label)}</span>${arrow}`;
   }).join("");
 
@@ -270,15 +290,18 @@ async function renderProject() {
   const hasVideo = !!p.video;
   const hasMockups = (p.mockups || []).length > 0;
 
+  const tabMockupsLabel = window.I18n ? window.I18n.t("case.tab_mockups") : "Screenshots";
+  const tabVideoLabel = window.I18n ? window.I18n.t("case.tab_video") : "Emulator Walkthrough";
+
   const walkTabs = hasVideo && hasMockups ? `
     <div class="cs-walk-tabs">
-      <div class="cs-walk-tab active" data-walk="mockups"><span class="cs-walk-tab-dot"></span><span class="cs-walk-tab-nm">Screenshots</span></div>
-      <div class="cs-walk-tab" data-walk="video"><span class="cs-walk-tab-dot"></span><span class="cs-walk-tab-nm">Video Demo</span></div>
+      <div class="cs-walk-tab active" data-walk="mockups"><span class="cs-walk-tab-dot"></span><span class="cs-walk-tab-nm">${tabMockupsLabel}</span></div>
+      <div class="cs-walk-tab" data-walk="video"><span class="cs-walk-tab-dot"></span><span class="cs-walk-tab-nm">${tabVideoLabel}</span></div>
     </div>` : "";
-  const walkNote = hasVideo && hasMockups ? `<p class="cs-walk-note">Static mockups shown by default — no live merchant data. Toggle to Video Demo for the full emulator walkthrough.</p>` : "";
+  const walkNote = hasVideo && hasMockups ? `<p class="cs-walk-note">${isAr ? "يتم عرض نماذج الشاشات افتراضياً. اضغط على المعاينة التفاعلية لمشاهدة فيديو المحاكي الكامل." : "Static mockups shown by default — toggle to Video Demo for the full emulator walkthrough."}</p>` : "";
 
   const challenges = (p.challenges || []).map(c => `
-    <div class="cs-challenge"><div class="cs-ch-label">${escapeHtml(c.label)}</div><div class="cs-ch-body"><b>${escapeHtml(c.title)}</b><p>${escapeHtml(c.body)}</p></div></div>
+    <div class="cs-challenge"><div class="cs-ch-label">${escapeHtml(c.label)}</div><div class="cs-ch-body"><b>${escapeHtml(c.title)}</b><p>${escapeHtml(c.description || c.body || "")}</p></div></div>
   `).join("");
 
   const techTags = (p.tech_tags || []).map(t => `<span class="tag hi">${escapeHtml(t.tag || t)}</span>`).join("");
@@ -290,10 +313,22 @@ async function renderProject() {
 
   const links = p.links || {};
   const linkButtons = [
-    links.github ? `<a href="${escapeAttr(links.github)}" target="_blank" rel="noopener" class="pl pl-store">${SVG_GITHUB} <span>GitHub</span> ${SVG_EXT}</a>` : "",
-    links.app_store ? `<a href="${escapeAttr(links.app_store)}" target="_blank" rel="noopener" class="pl pl-store">${SVG_APP_STORE} <span>App Store</span> ${SVG_EXT}</a>` : "",
-    links.google_play ? `<a href="${escapeAttr(links.google_play)}" target="_blank" rel="noopener" class="pl pl-store">${SVG_GOOGLE_PLAY} <span>Google Play</span> ${SVG_EXT}</a>` : "",
+    links.github ? `<a href="${escapeAttr(links.github)}" target="_blank" rel="noopener" class="pl pl-store">${SVG_GITHUB} <span>${window.I18n ? window.I18n.t("proj.store_github") : "GitHub"}</span> ${SVG_EXT}</a>` : "",
+    links.app_store ? `<a href="${escapeAttr(links.app_store)}" target="_blank" rel="noopener" class="pl pl-store">${SVG_APP_STORE} <span>${window.I18n ? window.I18n.t("proj.store_apple") : "App Store"}</span> ${SVG_EXT}</a>` : "",
+    links.google_play ? `<a href="${escapeAttr(links.google_play)}" target="_blank" rel="noopener" class="pl pl-store">${SVG_GOOGLE_PLAY} <span>${window.I18n ? window.I18n.t("proj.store_play") : "Google Play"}</span> ${SVG_EXT}</a>` : "",
   ].join("");
+
+  const tScreensTag = window.I18n ? window.I18n.t("case.screens_tag") : "App Preview & Screens";
+  const tScreensTitle = window.I18n ? window.I18n.t("case.screens_title") : "Screenshots & Interface";
+  const tOverview = window.I18n ? window.I18n.t("case.overview_title") : "Overview";
+  const tCapsTag = window.I18n ? window.I18n.t("case.caps_tag") : "Core Capabilities";
+  const tCapsTitle = window.I18n ? window.I18n.t("case.caps_title") : "What the app does";
+  const tArchTag = window.I18n ? window.I18n.t("case.arch_tag") : "Architecture";
+  const tArchTitle = window.I18n ? window.I18n.t("case.arch_title") : "How it's built";
+  const tChalTag = window.I18n ? window.I18n.t("case.challenges_tag") : "Problems Solved";
+  const tChalTitle = window.I18n ? window.I18n.t("case.challenges_title") : "Real engineering challenges";
+  const tTechTag = window.I18n ? window.I18n.t("case.tech_tag") : "Technologies Employed";
+  const tTechTitle = window.I18n ? window.I18n.t("case.tech_title") : "Built with";
 
   root.innerHTML = `
     <div class="cs-hero">
@@ -310,8 +345,8 @@ async function renderProject() {
       <div class="cs-walk-in">
         <div class="cs-walk-head">
           <div>
-            <div class="sec-tag">App Preview &amp; Screens</div>
-            <h2 class="cs-h2" style="font-size:1.75rem">Screenshots &amp; Interface</h2>
+            <div class="sec-tag">${tScreensTag}</div>
+            <h2 class="cs-h2" style="font-size:1.75rem">${tScreensTitle}</h2>
           </div>
           ${walkTabs}
         </div>
@@ -319,7 +354,7 @@ async function renderProject() {
         ${hasMockups ? `<div class="cs-mockup-grid" data-walk-panel="mockups">${banner}${mockups}</div>` : ""}
         ${hasVideo ? `
         <div class="cs-phone-wrap" data-walk-panel="video" style="${hasMockups ? "display:none" : ""}">
-          <span class="cs-phone-lbl">Emulator Walkthrough</span>
+          <span class="cs-phone-lbl">${tabVideoLabel}</span>
           <div class="cs-phone">
             <div class="cs-phone-screen">
               <video controls playsinline preload="metadata">
@@ -335,7 +370,7 @@ async function renderProject() {
     <div class="cs-band">
       <div class="cs-overview">
         <div>
-          <div class="cs-h2">Overview</div>
+          <div class="cs-h2">${tOverview}</div>
           <p>${(p.overview || "").replace(/\n\n/g, "<br><br>")}</p>
         </div>
         ${stats ? `<div class="cs-stats">${stats}</div>` : ""}
@@ -344,16 +379,16 @@ async function renderProject() {
 
     ${caps ? `
     <section class="cs-caps">
-      <div class="sec-tag">Core Capabilities</div>
-      <h2 class="cs-h2" style="font-size:1.75rem;margin-bottom:2rem">What the app does</h2>
+      <div class="sec-tag">${tCapsTag}</div>
+      <h2 class="cs-h2" style="font-size:1.75rem;margin-bottom:2rem">${tCapsTitle}</h2>
       <div class="cs-cap-grid">${caps}</div>
     </section>` : ""}
 
     ${p.architecture_text || flow ? `
     <div class="cs-arch">
       <div class="cs-arch-in">
-        <div class="sec-tag">Architecture</div>
-        <h2 class="cs-h2" style="font-size:1.75rem">How it's built</h2>
+        <div class="sec-tag">${tArchTag}</div>
+        <h2 class="cs-h2" style="font-size:1.75rem">${tArchTitle}</h2>
         <p>${(p.architecture_text || "").replace(/\n\n/g, "<br><br>")}</p>
         ${flow ? `<div class="cs-flow">${flow}</div>` : ""}
         ${flow2 ? `<div class="cs-flow" style="margin-top:1rem">${flow2}</div>` : ""}
@@ -362,16 +397,16 @@ async function renderProject() {
 
     ${challenges ? `
     <section class="cs-challenges">
-      <div class="sec-tag">Problems Solved</div>
-      <h2 class="cs-h2" style="font-size:1.75rem;margin-bottom:2rem">Real engineering challenges</h2>
+      <div class="sec-tag">${tChalTag}</div>
+      <h2 class="cs-h2" style="font-size:1.75rem;margin-bottom:2rem">${tChalTitle}</h2>
       ${challenges}
     </section>` : ""}
 
     ${techTags ? `
     <div class="cs-tech-band">
       <div class="cs-tech-in">
-        <div class="sec-tag" style="justify-content:center">Technologies Employed</div>
-        <h2 class="cs-h2" style="font-size:1.5rem">Built with</h2>
+        <div class="sec-tag" style="justify-content:center">${tTechTag}</div>
+        <h2 class="cs-h2" style="font-size:1.5rem">${tTechTitle}</h2>
         <div class="cs-tech-tags">${techTags}</div>
       </div>
     </div>` : ""}`;
@@ -405,6 +440,8 @@ async function renderProject() {
   lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
 }
+
+window.renderProjectDetail = renderProject;
 
 function escapeHtml(str) {
   if (str == null) return "";
